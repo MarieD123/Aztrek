@@ -1,0 +1,143 @@
+main {
+    background: $beige;
+    padding: 50px 0;
+
+    @media (min-width: $bp-large) {
+        padding: 100px 0;
+    }
+
+    .evasion {
+        text-align: center;
+
+        h2 {
+            margin: 20px auto;
+        }
+
+
+        .destination-color {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.4);
+            transition: .5s;
+
+            h3 {
+                color: white;
+                font-size: 1rem;
+                margin: auto;
+                opacity: 1;
+                transition: .5s;
+            }
+        }
+
+        .destinations {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin: 30px auto;
+
+            .photos-block {
+                display: flex;
+            }
+
+            .photo-destination {
+                margin: 10px;
+            }
+
+            .destination-color {
+                height: 100%;
+            }
+
+            .photos-block-1 {
+
+                #photo-1 {
+                    background-image: url('../images/pays-mexique.jpg');
+                    background-size: cover;
+                    flex-basis: 60%;
+                    height: 170px;
+                }
+
+                #photo-2 {
+                    background: url('../images/pays-guatemala.jpg') no-repeat center;
+                    background-size: cover;
+                    flex-basis: 40%;
+                    height: 170px;
+                }
+            }
+
+            .photos-block-2 {
+
+                #photo-3 {
+                    background: url('../images/pays-honduras.jpg') no-repeat center;
+                    background-size: cover;
+                    flex-basis: 40%;
+                    height: 170px;
+
+                }
+
+                #photo-4 {
+                    background: url('../images/pays-salvador.jpg') no-repeat center;
+                    background-size: cover;
+                    flex-basis: 60%;
+                    height: 170px;
+                }
+            }
+
+            .photos-block-3 {
+                #photo-5 {
+                    background: url('../images/pays-costarica.jpg') no-repeat center;
+                    background-size: cover;
+                    height: 170px;
+                    flex-basis: 100%;
+                }
+            }
+
+            @media (min-width: $bp-medium) {
+                flex-wrap: wrap;
+                max-height: 460px;
+
+                .photos-block-1,
+                .photos-block-2 {
+                    width: 70%;
+                }
+
+                .photos-block-3 {
+                    width: 30%;
+
+                    #photo-5 {
+                        height: 360px;
+                        margin: 10px 0;
+                    }
+                }
+            }
+
+            @media (min-width: $bp-large) {
+
+                .destination-color {
+                    display: flex;
+                    background-color: transparent;
+                    transition: .5s;
+
+                    h3 {
+                        color: white;
+                        font-size: 2rem;
+                        margin: auto;
+                        opacity: 0;
+                        transition: .5s;
+                    }
+                }
+
+                .photo-destination:hover .destination-color,
+                .photo-destination:focus .destination-color {
+
+                    h3 {
+                        display: block;
+                        opacity: 1;
+                    }
+
+                    background-color: rgba(0, 0, 0, 0.6);
+                    background-image: url();
+                }
+            }
+
+        }
+    }
+}

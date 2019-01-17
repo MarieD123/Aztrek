@@ -1,0 +1,247 @@
+//Changement de fond au scroll
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-white {
+  background-color: $beige;
+}
+
+.header-top .container-fixed {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 400;
+}
+
+// @media(min-width:$bp-large) {
+//   .header-top .container-fixed {
+//     position: fixed;
+//     top: 0;
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+//   }
+// }
+
+
+
+//Picto burger animé
+
+
+.nav-toggle {
+  display: block;
+  font-size: 0;
+  width: 40px;
+  height: 45px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: none;
+  border: none;
+  outline: none;
+
+  span,
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: $brown;
+    border-radius: 6px;
+    opacity: 1;
+    left: 0;
+    transition: .3s;
+    transform-origin: left center;
+  }
+
+  &::before {
+    content: '';
+    top: 0px;
+  }
+
+  span {
+    top: 12px;
+  }
+
+  &::after {
+    content: '';
+    top: 24px;
+  }
+
+  @media(min-width: $bp-large) {
+    display: none;
+  }
+}
+
+.nav-expanded {
+
+  overflow: hidden;
+
+  .nav-toggle {
+
+    span {
+      width: 0%;
+      opacity: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: -2px;
+      left: 5px;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      top: 26px;
+      left: 5px;
+    }
+
+    @media(min-width:$bp-large) {
+      display: none;
+    }
+  }
+
+  h1{
+    display: none;
+  }
+
+  .resp-nav {
+
+    position: fixed;
+    left: 0;
+
+    .logo img {
+      opacity: 0;
+    }
+  }
+ 
+
+}
+
+.main-nav {
+
+  ul {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 1rem;
+  }
+
+  @media(min-width:$bp-large) {
+
+    display: flex;
+    margin: 0 auto;
+
+    &>ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul ul {
+      display: block;
+      position: absolute;
+      background-color: $beige;
+      height: 0;
+      width: 250px;
+      overflow: hidden;
+      opacity: 0;
+      transition: .5s;
+
+      a {
+        color: $brown
+      }
+
+      a:hover {
+        background-color: $dark-beige;
+      }
+    }
+
+    &>ul>li:hover {
+      &>ul {
+        height: auto;
+        opacity: 1;
+      }
+
+      &>a::after {
+        transform: rotate(90deg);
+      }
+    }
+
+    li {
+      a {
+        display: block;
+        padding: .5em 1.5em;
+        font-size: 1em;
+        text-transform: uppercase;
+        transition: .3s;
+      }
+
+      &:hover a {
+        color: $green;
+      }
+    }
+
+  }
+}
+
+
+.resp-nav {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 10px;
+  background-color: $beige;
+  transition: 0.3s;
+
+  a {
+    display: block;
+    color: $brown;
+    padding: .5em 1.5em;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: .3s;
+
+    &:hover {
+      background-color: $dark-beige;
+      color: $green;
+    }
+  }
+
+  &>ul {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  ul ul {
+    display: none;
+    padding-left: 2rem;
+  }
+}
+
+.has-sublist>a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.has-sublist>a.expanded::after {
+  transform: rotate(90deg);
+}
+
+.has-sublist>a::after {
+  content: '>';
+  margin-left: 1rem;
+  transition: transform .3s;
+  display: inline-block;
+}

@@ -1,0 +1,113 @@
+.liste-sejours {
+    background-color: $beige;
+
+
+    .header-top {
+        background: url(../images/header-costarica.png) bottom no-repeat;
+        background-color: $beige;
+    }
+
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+
+        aside {
+
+            display: block;
+            flex-basis: 100%;
+            padding: 15px;
+
+            @media (min-width: $bp-large) {
+                flex-basis: 25%
+            }
+
+            .criteres,
+            form,
+            button {
+                background: white;
+            }
+
+            h4 {
+                margin: 0;
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+
+        section {
+
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            @media (min-width: $bp-large) {
+                flex-basis: 75%
+            }
+
+            .infobulle {
+                position: relative;
+                cursor: help;
+            }
+
+            .difficulte {
+                text-align: center;
+                margin: 10px auto 20px;
+            }
+
+            .infobulle:hover::after,
+            .infobulle:focus::after {
+                content: attr(aria-label);
+                position: absolute;
+                z-index: 1;
+                min-width: 200px;
+                left: 100%;
+                bottom: 100%;
+                padding: 10px;
+                font-size: .7em;
+                background-color: white;
+                border: #542D25 solid 1px;
+            }
+
+            .fiche-sejour {
+                flex-basis: 96%;
+                margin: 2%;
+
+                background: white;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+                @media (min-width: $bp-medium) {
+                    flex-basis: 46%
+                }
+
+                h2 {
+                    font-size: 1.25rem;
+                    color: $dark-green;
+                    letter-spacing: 0;
+                    margin: 10px 0;
+                }
+
+                h3 {
+                    text-transform: lowercase;
+                    font-family: $default-font;
+                    margin: 0;
+                }
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .infos-sejour{
+                    display: flex;
+                }
+
+                .infobulle img{
+                    height: 15px;
+                    width: 15px;
+                }
+            }
+        }
+    }
+}

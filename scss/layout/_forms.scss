@@ -1,0 +1,7 @@
+.newsletter-form {
+    @include form($brown);
+}
+
+.footer-form{
+    @include form($green);
+}

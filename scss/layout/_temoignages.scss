@@ -1,0 +1,66 @@
+.temoignages .container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    padding: 50px 0;
+
+    .btn-cta{
+        margin-top: 30px;
+    }
+
+    @media (min-width: $bp-large) {
+        padding: 50px 0;
+    }
+
+    article {
+        display: flex;
+        align-items: flex-start;
+
+        &>img {
+            display: none;
+
+            @media (min-width: $bp-medium) {
+                display: block;
+                width: 50%;
+                height: auto;
+            }
+        }
+
+        .texte {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            color: $dark-green;
+            text-align: center;
+            margin: 0 auto;
+
+            .note img {
+                margin: 0 auto;
+            }
+
+            .plus {
+                color: $dark-green;
+                text-decoration: underline;
+            }
+
+            .id {
+                margin-left: auto;
+                text-align: right;
+
+                p,
+                img {
+                    display: inline-block;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.owl-carousel button{
+    outline: 0; /* Permet de supprimer la bordure bleu qui restait lorsqu'on cliquait sur un des boutons */
+}

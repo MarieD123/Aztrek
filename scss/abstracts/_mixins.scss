@@ -1,0 +1,46 @@
+@mixin button($color) {
+    background-color: $color;
+    border-radius: 50px;
+    color: white;
+    display: inline-block;
+    padding: 10px 25px;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        background-color: darken($color, 10%);
+    }
+}
+
+@mixin form($color) {
+    display: flex;
+    justify-content: center;
+
+    input[type="email"] {
+        background: $dark-beige;
+        border-radius: 10px 0 0 10px;
+        color: $brown;
+        margin: 0;
+        padding: 5px;
+
+
+        &::placeholder {
+            color: $brown;
+        }
+    }
+
+    button[type=submit] {
+        background: $color;
+        border: none;
+        border-radius: 0 10px 10px 0;
+        color: white;
+        margin: 0;
+        padding: 5px 15px;
+
+
+        &:hover,
+        &:focus {
+            background-color: darken($color, 10%);
+        }
+    }
+}

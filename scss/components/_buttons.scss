@@ -1,0 +1,22 @@
+.btn-cta {
+    @include button($brown);
+}
+
+.btn-rs{
+    padding: 0;
+    transition: .5s;
+
+    &:hover{
+        transform: rotate(360deg);
+    }
+}
+
+.btn-temoignages{
+    @include button(white);
+    border: 1px $brown solid;
+    color: $brown;
+}
+
+.btn-green {
+    @include button($green);
+}

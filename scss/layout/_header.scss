@@ -1,0 +1,43 @@
+@keyframes apparition {
+    from {
+        transform: translate(0px, 0px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0px, -50px);
+        opacity: 1;
+    }
+}
+
+.header-top {
+    display: flex;
+    flex-direction: column;
+
+    background-color: $beige;
+    background: url(../images/bg-header-photo.png) bottom right no-repeat;
+    background-size: cover;
+    min-height: 500px;
+
+
+    @media (min-width: $bp-large) {
+        min-height: 500px;
+    }
+
+    @media (min-width: $bp-extra-large) {
+        min-height: 900px;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo{
+            padding-top: 10px;
+    }
+}

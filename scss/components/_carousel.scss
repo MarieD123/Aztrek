@@ -1,0 +1,21 @@
+.owl-carousel{
+    padding: 0 50px;
+}
+
+.owl-carousel .owl-item img{
+    width: auto;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot{
+    font-size: 5rem;
+    position: absolute;
+    top: 30%;
+}
+
+.owl-prev{
+    left: 0;
+}
+
+.owl-next{
+    right: 0;
+}

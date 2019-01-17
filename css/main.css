@@ -1,0 +1,1062 @@
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+body {
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+img {
+  display: block;
+  height: auto;
+  width: 100%; }
+
+a {
+  text-decoration: none;
+  display: block; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.hide {
+  display: none; }
+
+body {
+  color: #002C00;
+  font-family: "Open Sans", sans-serif; }
+
+.header-top nav a {
+  color: #66381B;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase; }
+
+h1, h2, h3, h4 {
+  color: #4A8B2C;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase; }
+
+h1 {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+  margin: auto;
+  padding: 0 15px;
+  animation-name: apparition;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.2rem; } }
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 3rem; } }
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: .3rem;
+  margin-top: 0; }
+  @media (min-width: 992px) {
+    h2 {
+      font-size: 3.5rem; } }
+
+h3 {
+  color: #002C00;
+  font-size: 1.25rem; }
+
+h4 {
+  font-size: 1.25rem; }
+  @media (min-width: 992px) {
+    h4 {
+      font-size: 1.5rem; } }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0  20px; }
+
+.bg-transparent {
+  background-color: transparent; }
+
+.bg-white {
+  background-color: #F7EEEA; }
+
+.header-top .container-fixed {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 400; }
+
+.nav-toggle {
+  display: block;
+  font-size: 0;
+  width: 40px;
+  height: 45px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: none;
+  border: none;
+  outline: none; }
+  .nav-toggle span, .nav-toggle::before, .nav-toggle::after {
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: #66381B;
+    border-radius: 6px;
+    opacity: 1;
+    left: 0;
+    transition: .3s;
+    transform-origin: left center; }
+  .nav-toggle::before {
+    content: '';
+    top: 0px; }
+  .nav-toggle span {
+    top: 12px; }
+  .nav-toggle::after {
+    content: '';
+    top: 24px; }
+  @media (min-width: 992px) {
+    .nav-toggle {
+      display: none; } }
+
+.nav-expanded {
+  overflow: hidden; }
+  .nav-expanded .nav-toggle span {
+    width: 0%;
+    opacity: 0; }
+  .nav-expanded .nav-toggle::before {
+    transform: rotate(45deg);
+    top: -2px;
+    left: 5px; }
+  .nav-expanded .nav-toggle::after {
+    transform: rotate(-45deg);
+    top: 26px;
+    left: 5px; }
+  @media (min-width: 992px) {
+    .nav-expanded .nav-toggle {
+      display: none; } }
+  .nav-expanded h1 {
+    display: none; }
+  .nav-expanded .resp-nav {
+    position: fixed;
+    left: 0; }
+    .nav-expanded .resp-nav .logo img {
+      opacity: 0; }
+
+.main-nav ul {
+  display: none; }
+.main-nav .logo {
+  margin-left: 1rem; }
+@media (min-width: 992px) {
+  .main-nav {
+    display: flex;
+    margin: 0 auto; }
+    .main-nav > ul {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .main-nav ul ul {
+      display: block;
+      position: absolute;
+      background-color: #F7EEEA;
+      height: 0;
+      width: 250px;
+      overflow: hidden;
+      opacity: 0;
+      transition: .5s; }
+      .main-nav ul ul a {
+        color: #66381B; }
+      .main-nav ul ul a:hover {
+        background-color: #E0D4CC; }
+    .main-nav > ul > li:hover > ul {
+      height: auto;
+      opacity: 1; }
+    .main-nav > ul > li:hover > a::after {
+      transform: rotate(90deg); }
+    .main-nav li a {
+      display: block;
+      padding: .5em 1.5em;
+      font-size: 1em;
+      text-transform: uppercase;
+      transition: .3s; }
+    .main-nav li:hover a {
+      color: #4A8B2C; } }
+
+.resp-nav {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 10px;
+  background-color: #F7EEEA;
+  transition: 0.3s; }
+  .resp-nav a {
+    display: block;
+    color: #66381B;
+    padding: .5em 1.5em;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: .3s; }
+    .resp-nav a:hover {
+      background-color: #E0D4CC;
+      color: #4A8B2C; }
+  .resp-nav > ul {
+    max-width: 250px;
+    margin: 0 auto; }
+  .resp-nav ul ul {
+    display: none;
+    padding-left: 2rem; }
+
+.has-sublist > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.has-sublist > a.expanded::after {
+  transform: rotate(90deg); }
+
+.has-sublist > a::after {
+  content: '>';
+  margin-left: 1rem;
+  transition: transform .3s;
+  display: inline-block; }
+
+@keyframes apparition {
+  from {
+    transform: translate(0px, 0px);
+    opacity: 0; }
+  to {
+    transform: translate(0px, -50px);
+    opacity: 1; } }
+.header-top {
+  display: flex;
+  flex-direction: column;
+  background-color: #F7EEEA;
+  background: url(../images/bg-header-photo.png) bottom right no-repeat;
+  background-size: cover;
+  min-height: 500px; }
+  @media (min-width: 992px) {
+    .header-top {
+      min-height: 500px; } }
+  @media (min-width: 1100px) {
+    .header-top {
+      min-height: 900px; }
+      .header-top h1 {
+        font-size: 3.5rem; } }
+  .header-top .container {
+    display: flex;
+    justify-content: space-between; }
+  .header-top .logo {
+    padding-top: 10px; }
+
+.search-form {
+  width: 25%; }
+  .search-form span {
+    background-color: #4A8B2C;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 5px; }
+  .search-form button {
+    background: none;
+    border: none;
+    color: #4A8B2C;
+    margin: 15px 0;
+    text-align: right; }
+  .search-form form {
+    border-top: 1px dotted #002C00;
+    display: flex;
+    flex-direction: column; }
+    .search-form form ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+    .search-form form .item {
+      position: relative; }
+    .search-form form h3 {
+      margin: 0;
+      padding: .5em;
+      border-bottom: 1px dotted #666;
+      position: relative; }
+      .search-form form h3::after {
+        content: '';
+        position: absolute;
+        border: transparent 6px solid;
+        border-left-color: black;
+        border-top-width: 4px;
+        border-bottom-width: 4px;
+        right: 10%;
+        top: calc(50% - 6px);
+        transition: .3s;
+        transform-origin: 4px center; }
+      .search-form form h3.expanded::after {
+        transform: rotate(90deg); }
+      .search-form form h3:hover {
+        cursor: default; }
+    .search-form form .sub-list {
+      display: none;
+      padding: 1em 0;
+      border-bottom: 1px dotted #666;
+      background: rgba(255, 255, 255, 0.8); }
+    .search-form form button {
+      border: none;
+      cursor: pointer;
+      margin: 1em 0 0;
+      padding: .5em 1em;
+      margin-left: auto; }
+
+main {
+  background: #F7EEEA;
+  padding: 50px 0; }
+  @media (min-width: 992px) {
+    main {
+      padding: 100px 0; } }
+  main .evasion {
+    text-align: center; }
+    main .evasion h2 {
+      margin: 20px auto; }
+    main .evasion .destination-color {
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.4);
+      transition: .5s; }
+      main .evasion .destination-color h3 {
+        color: white;
+        font-size: 1rem;
+        margin: auto;
+        opacity: 1;
+        transition: .5s; }
+    main .evasion .destinations {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin: 30px auto; }
+      main .evasion .destinations .photos-block {
+        display: flex; }
+      main .evasion .destinations .photo-destination {
+        margin: 10px; }
+      main .evasion .destinations .destination-color {
+        height: 100%; }
+      main .evasion .destinations .photos-block-1 #photo-1 {
+        background-image: url("../images/pays-mexique.jpg");
+        background-size: cover;
+        flex-basis: 60%;
+        height: 170px; }
+      main .evasion .destinations .photos-block-1 #photo-2 {
+        background: url("../images/pays-guatemala.jpg") no-repeat center;
+        background-size: cover;
+        flex-basis: 40%;
+        height: 170px; }
+      main .evasion .destinations .photos-block-2 #photo-3 {
+        background: url("../images/pays-honduras.jpg") no-repeat center;
+        background-size: cover;
+        flex-basis: 40%;
+        height: 170px; }
+      main .evasion .destinations .photos-block-2 #photo-4 {
+        background: url("../images/pays-salvador.jpg") no-repeat center;
+        background-size: cover;
+        flex-basis: 60%;
+        height: 170px; }
+      main .evasion .destinations .photos-block-3 #photo-5 {
+        background: url("../images/pays-costarica.jpg") no-repeat center;
+        background-size: cover;
+        height: 170px;
+        flex-basis: 100%; }
+      @media (min-width: 768px) {
+        main .evasion .destinations {
+          flex-wrap: wrap;
+          max-height: 460px; }
+          main .evasion .destinations .photos-block-1,
+          main .evasion .destinations .photos-block-2 {
+            width: 70%; }
+          main .evasion .destinations .photos-block-3 {
+            width: 30%; }
+            main .evasion .destinations .photos-block-3 #photo-5 {
+              height: 360px;
+              margin: 10px 0; } }
+      @media (min-width: 992px) {
+        main .evasion .destinations .destination-color {
+          display: flex;
+          background-color: transparent;
+          transition: .5s; }
+          main .evasion .destinations .destination-color h3 {
+            color: white;
+            font-size: 2rem;
+            margin: auto;
+            opacity: 0;
+            transition: .5s; }
+        main .evasion .destinations .photo-destination:hover .destination-color,
+        main .evasion .destinations .photo-destination:focus .destination-color {
+          background-color: rgba(0, 0, 0, 0.6);
+          background-image: url(); }
+          main .evasion .destinations .photo-destination:hover .destination-color h3,
+          main .evasion .destinations .photo-destination:focus .destination-color h3 {
+            display: block;
+            opacity: 1; } }
+
+.guide {
+  text-align: center;
+  margin: 50px 0; }
+  .guide h2 {
+    margin-top: 0; }
+  .guide p {
+    text-align: justify; }
+  @media (min-width: 768px) {
+    .guide {
+      background: url("../images/bg-guide.jpg") center no-repeat;
+      background-size: contain;
+      min-height: 430px; }
+      .guide .container {
+        display: flex; }
+        .guide .container .texte-guide {
+          flex-basis: 50%;
+          margin-right: auto; } }
+  @media (min-width: 992px) {
+    .guide {
+      min-height: 530px; } }
+
+.actualites {
+  background-color: #F7EEEA;
+  text-align: center;
+  padding: 50px 0; }
+  @media (min-width: 992px) {
+    .actualites {
+      padding: 100px 0; } }
+  .actualites .actus {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .actualites .actus article {
+      padding: 10px; }
+      .actualites .actus article .visuel-actu img {
+        border: 1px solid gray; }
+      .actualites .actus article:nth-of-type(2) .btn-cta {
+        margin-top: 20px; }
+    @media (min-width: 768px) {
+      .actualites .actus {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start; }
+        .actualites .actus article {
+          flex-basis: 50%; } }
+    @media (min-width: 992px) {
+      .actualites .actus article {
+        flex-basis: 33%; } }
+  .actualites .newsletter .avion {
+    display: none; }
+  @media (min-width: 992px) {
+    .actualites .newsletter .avion {
+      display: block; }
+    .actualites .newsletter .abonnement {
+      display: flex;
+      justify-content: center;
+      align-items: center; } }
+
+.temoignages .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0; }
+  .temoignages .container .btn-cta {
+    margin-top: 30px; }
+  @media (min-width: 992px) {
+    .temoignages .container {
+      padding: 50px 0; } }
+  .temoignages .container article {
+    display: flex;
+    align-items: flex-start; }
+    .temoignages .container article > img {
+      display: none; }
+      @media (min-width: 768px) {
+        .temoignages .container article > img {
+          display: block;
+          width: 50%;
+          height: auto; } }
+    .temoignages .container article .texte {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #002C00;
+      text-align: center;
+      margin: 0 auto; }
+      .temoignages .container article .texte .note img {
+        margin: 0 auto; }
+      .temoignages .container article .texte .plus {
+        color: #002C00;
+        text-decoration: underline; }
+      .temoignages .container article .texte .id {
+        margin-left: auto;
+        text-align: right; }
+        .temoignages .container article .texte .id p,
+        .temoignages .container article .texte .id img {
+          display: inline-block;
+          margin: 0; }
+
+.owl-carousel button {
+  outline: 0;
+  /* Permet de supprimer la bordure bleu qui restait lorsqu'on cliquait sur un des boutons */ }
+
+.photos {
+  background: #F7EEEA;
+  padding: 50px 0;
+  text-align: center; }
+  @media (min-width: 992px) {
+    .photos {
+      padding: 100px 0; } }
+  .photos .coups-de-coeur {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    @media (min-width: 768px) {
+      .photos .coups-de-coeur {
+        flex-direction: row;
+        flex-wrap: wrap; } }
+    .photos .coups-de-coeur .photo-insta {
+      flex-basis: 100%;
+      padding: 15px 0; }
+      .photos .coups-de-coeur .photo-insta img {
+        border: 1px solid gray; }
+      @media (min-width: 768px) {
+        .photos .coups-de-coeur .photo-insta {
+          flex-basis: 50%;
+          padding: 15px 15px; } }
+      @media (min-width: 992px) {
+        .photos .coups-de-coeur .photo-insta {
+          flex-basis: 25%;
+          padding: 0 15px; } }
+
+.footer-bottom {
+  background: #66381B;
+  color: white;
+  padding: 20px 0;
+  text-align: center; }
+  .footer-bottom span {
+    color: #4A8B2C;
+    font-weight: bold; }
+  .footer-bottom .footer-infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; }
+    .footer-bottom .footer-infos .logo {
+      flex-basis: 30%; }
+    .footer-bottom .footer-infos .contact {
+      flex-basis: 65%; }
+      .footer-bottom .footer-infos .contact p {
+        margin-top: 0; }
+    .footer-bottom .footer-infos .newsletter-footer {
+      padding: 20px 0; }
+    .footer-bottom .footer-infos .reseaux-sociaux ul {
+      display: flex;
+      justify-content: center; }
+      .footer-bottom .footer-infos .reseaux-sociaux ul li {
+        padding: 0 8px; }
+    @media (min-width: 768px) {
+      .footer-bottom .footer-infos .logo {
+        flex-basis: 20%; }
+      .footer-bottom .footer-infos .contact {
+        flex-basis: 40%; }
+      .footer-bottom .footer-infos .newsletter-footer {
+        flex-basis: 40%; } }
+    @media (min-width: 992px) {
+      .footer-bottom .footer-infos .logo {
+        flex-basis: 10%; }
+      .footer-bottom .footer-infos .contact {
+        flex-basis: 30%; }
+      .footer-bottom .footer-infos .newsletter-footer {
+        flex-basis: 30%; }
+      .footer-bottom .footer-infos .reseaux-sociaux {
+        flex-basis: 30%; } }
+  .footer-bottom .credits {
+    margin-top: 50px; }
+    .footer-bottom .credits > a {
+      color: white; }
+      .footer-bottom .credits > a:hover {
+        color: #4A8B2C; }
+    @media (min-width: 768px) {
+      .footer-bottom .credits {
+        display: inline-flex; } }
+
+.newsletter-form {
+  display: flex;
+  justify-content: center; }
+  .newsletter-form input[type="email"] {
+    background: #E0D4CC;
+    border-radius: 10px 0 0 10px;
+    color: #66381B;
+    margin: 0;
+    padding: 5px; }
+    .newsletter-form input[type="email"]::placeholder {
+      color: #66381B; }
+  .newsletter-form button[type=submit] {
+    background: #66381B;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    margin: 0;
+    padding: 5px 15px; }
+    .newsletter-form button[type=submit]:hover, .newsletter-form button[type=submit]:focus {
+      background-color: #3e2210; }
+
+.footer-form {
+  display: flex;
+  justify-content: center; }
+  .footer-form input[type="email"] {
+    background: #E0D4CC;
+    border-radius: 10px 0 0 10px;
+    color: #66381B;
+    margin: 0;
+    padding: 5px; }
+    .footer-form input[type="email"]::placeholder {
+      color: #66381B; }
+  .footer-form button[type=submit] {
+    background: #4A8B2C;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    margin: 0;
+    padding: 5px 15px; }
+    .footer-form button[type=submit]:hover, .footer-form button[type=submit]:focus {
+      background-color: #356420; }
+
+.btn-cta {
+  background-color: #66381B;
+  border-radius: 50px;
+  color: white;
+  display: inline-block;
+  padding: 10px 25px;
+  text-transform: uppercase; }
+  .btn-cta:hover, .btn-cta:focus {
+    background-color: #3e2210; }
+
+.btn-rs {
+  padding: 0;
+  transition: .5s; }
+  .btn-rs:hover {
+    transform: rotate(360deg); }
+
+.btn-temoignages {
+  background-color: white;
+  border-radius: 50px;
+  color: white;
+  display: inline-block;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  border: 1px #66381B solid;
+  color: #66381B; }
+  .btn-temoignages:hover, .btn-temoignages:focus {
+    background-color: #e6e6e6; }
+
+.btn-green {
+  background-color: #4A8B2C;
+  border-radius: 50px;
+  color: white;
+  display: inline-block;
+  padding: 10px 25px;
+  text-transform: uppercase; }
+  .btn-green:hover, .btn-green:focus {
+    background-color: #356420; }
+
+.owl-carousel {
+  padding: 0 50px; }
+
+.owl-carousel .owl-item img {
+  width: auto; }
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+  font-size: 5rem;
+  position: absolute;
+  top: 30%; }
+
+.owl-prev {
+  left: 0; }
+
+.owl-next {
+  right: 0; }
+
+.liste-sejours {
+  background-color: #F7EEEA; }
+  .liste-sejours .header-top {
+    background: url(../images/header-costarica.png) bottom no-repeat;
+    background-color: #F7EEEA; }
+  .liste-sejours main {
+    display: flex;
+    flex-wrap: wrap; }
+    .liste-sejours main aside {
+      display: block;
+      flex-basis: 100%;
+      padding: 15px; }
+      @media (min-width: 992px) {
+        .liste-sejours main aside {
+          flex-basis: 25%; } }
+      .liste-sejours main aside .criteres,
+      .liste-sejours main aside form,
+      .liste-sejours main aside button {
+        background: white; }
+      .liste-sejours main aside h4 {
+        margin: 0;
+        padding: 10px 0;
+        text-align: center; }
+    .liste-sejours main section {
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      @media (min-width: 992px) {
+        .liste-sejours main section {
+          flex-basis: 75%; } }
+      .liste-sejours main section .infobulle {
+        position: relative;
+        cursor: help; }
+      .liste-sejours main section .difficulte {
+        text-align: center;
+        margin: 10px auto 20px; }
+      .liste-sejours main section .infobulle:hover::after,
+      .liste-sejours main section .infobulle:focus::after {
+        content: attr(aria-label);
+        position: absolute;
+        z-index: 1;
+        min-width: 200px;
+        left: 100%;
+        bottom: 100%;
+        padding: 10px;
+        font-size: .7em;
+        background-color: white;
+        border: #542D25 solid 1px; }
+      .liste-sejours main section .fiche-sejour {
+        flex-basis: 96%;
+        margin: 2%;
+        background: white;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); }
+        @media (min-width: 768px) {
+          .liste-sejours main section .fiche-sejour {
+            flex-basis: 46%; } }
+        .liste-sejours main section .fiche-sejour h2 {
+          font-size: 1.25rem;
+          color: #002C00;
+          letter-spacing: 0;
+          margin: 10px 0; }
+        .liste-sejours main section .fiche-sejour h3 {
+          text-transform: lowercase;
+          font-family: "Open Sans", sans-serif;
+          margin: 0; }
+        .liste-sejours main section .fiche-sejour a {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+        .liste-sejours main section .fiche-sejour .infos-sejour {
+          display: flex; }
+        .liste-sejours main section .fiche-sejour .infobulle img {
+          height: 15px;
+          width: 15px; }
+
+/*# sourceMappingURL=main.css.map */
