@@ -1,4 +1,5 @@
 <?php
+//////////////////////////// code non utilisé pour le moment ///////////////////////
 
 function insertCategorie(string $libelle) {
     global $connection;
@@ -19,4 +20,21 @@ function updateCategorie(int $id, string $libelle){
     $stmt->bindParam(":libelle", $libelle);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
+}
+///////////////////////////////////////////////////
+
+
+function getAllPays(): array {
+    global $connection;
+
+    $query = "
+    SELECT 
+      pays.libelle AS pays
+    FROM pays
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt -> execute();
+
+    return $stmt->fetchAll();
 }
