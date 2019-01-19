@@ -647,27 +647,27 @@ main {
       main .evasion .destinations .destination-color {
         height: 100%; }
       main .evasion .destinations .photos-block-1 #photo-1 {
-        background-image: url("../images/pays-mexique.jpg");
+        background-image: url("../uploads/pays-mexique.jpg");
         background-size: cover;
         flex-basis: 60%;
         height: 170px; }
       main .evasion .destinations .photos-block-1 #photo-2 {
-        background: url("../images/pays-guatemala.jpg") no-repeat center;
+        background: url("../uploads/pays-guatemala.jpg") no-repeat center;
         background-size: cover;
         flex-basis: 40%;
         height: 170px; }
       main .evasion .destinations .photos-block-2 #photo-3 {
-        background: url("../images/pays-honduras.jpg") no-repeat center;
+        background: url("../uploads/pays-honduras.jpg") no-repeat center;
         background-size: cover;
         flex-basis: 40%;
         height: 170px; }
       main .evasion .destinations .photos-block-2 #photo-4 {
-        background: url("../images/pays-salvador.jpg") no-repeat center;
+        background: url("../uploads/pays-salvador.jpg") no-repeat center;
         background-size: cover;
         flex-basis: 60%;
         height: 170px; }
       main .evasion .destinations .photos-block-3 #photo-5 {
-        background: url("../images/pays-costarica.jpg") no-repeat center;
+        background: url("../uploads/pays-costarica.jpg") no-repeat center;
         background-size: cover;
         height: 170px;
         flex-basis: 100%; }
