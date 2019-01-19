@@ -1,49 +1,13 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aztrek | Nos séjours</title>
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:300,400,600" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css">
-</head>
+<?php
+require_once "model/database.php";
+require_once "layout/header.php";
+?>
 
 <body class="liste-sejours">
     <header class="header-top" id="top">
-        <div class="container-fixed">
-            <button class="nav-toggle" data-target=".main-nav">Menu<span></span></button>
 
-            <nav class="main-nav ">
-                <div class="logo"><a href="index.php"><img src="./images/logo-nav.png" alt=""></a></div>
-                <ul>
-                    <li class="item has-sublist">
-                        <a href="#0" class="dropdownStart">Destinations</a>
-                        <ul class="dropdown">
-                            <li><a href="liste-sejours.php">Costa Rica</a></li>
-                            <li><a href="liste-sejours.php">Guatemala</a></li>
-                            <li><a href="liste-sejours.php">Honduras</a></li>
-                            <li><a href="liste-sejours.php">Mexique</a></li>
-                            <li><a href="liste-sejours.php">Salvador</a></li>
-                            <li><a href="liste-sejours.php">Toutes nos destinations</a></li>
-                        </ul>
+        <?php require_once "layout/menu.php";?>
 
-                    </li>
-                    <li class="item"><a href="#0">Qui sommes nous ?</a></li>
-                    <li class="item"><a href="#0">Blog</a></li>
-                    <li class="item"><a href="#0">Contact</a></li>
-                    <li class="item"><a href="#0"><i class="fas fa-user"></i> Espace client</a></li>
-
-                </ul>
-
-            </nav>
-
-
-        </div>
         <h1>Découvrez le Costa Rica</h1>
     </header>
 
@@ -208,38 +172,4 @@
         </section>
     </main>
 
-    <footer class="footer-bottom">
-        <div class="container">
-            <div class="footer-infos">
-                <a class="logo" href=""><img src="./images/logo-footer.png" alt="logo"></a>
-                <div class="contact">
-                    <p>Appelez nous au <span>01 23 45 67 89</span></p>
-                    <a href="" class="btn-cta btn-green">Nous contacter</a>
-                </div>
-                <div class="newsletter-footer">
-                    <p>Envie d’un avant-goût de voyage ?
-                        Abonnez vous à notre <span>newsletter</span></p>
-                    <form class="newsletter-form footer-form" action="#" method="get">
-                        <input type="email" name="mail" id="email" placeholder="Votre email">
-                        <button type="submit" name="submit-btn">S'inscrire</button>
-                    </form>
-                </div>
-                <div class="reseaux-sociaux">
-                    <p>Suivez nous !</p>
-                    <ul>
-                        <li><a class="btn-rs" href=""><img src="./images/footer-insta.png" alt="instagram"></a></li>
-                        <li><a class="btn-rs" href=""><img src="./images/footer-fb.png" alt="facebook"></a></li>
-                        <li><a class="btn-rs" href=""><img src="./images/footer-twitter.png" alt="twitter"></a></li>
-                        <li><a class="btn-rs" href=""><img src="./images/footer-youtube.png" alt="youtube"></a></li>
-                    </ul>
-                </div>
-            </div>
-            <p class="credits">Copyright Aztrek 2018 - <a href="">Crédits et mentions légales</a></p>
-        </div>
-    </footer>
-
-
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./js/owl.carousel.min.js"></script>
-    <script src="./js/scripts.js"></script>
-</body>
+<?php require_once "layout/footer.php";?>
