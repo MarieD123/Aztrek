@@ -16,7 +16,7 @@ require_once "layout/header.php";
 
         <section class="evasion container">
             <h2>évadez vous</h2>
-            <a href="" class="btn-cta">Découvrir nos séjours</a>
+
             <div class="destinations">
                 <div class="photos-block photos-block-1">
                     <a href="#" class="photo-destination" id="photo-1">
@@ -50,6 +50,7 @@ require_once "layout/header.php";
                     </a>
                 </div>
             </div>
+            <a href="" class="btn-cta">Toutes nos destinations</a>
         </section>
     </main>
 

@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$categories = getAllEntities("categorie");
+$destinations = getAllEntities("pays");
 
 $error_msg = null;
 if (isset($_GET['errcode'])) {
@@ -19,7 +19,7 @@ if (isset($_GET['errcode'])) {
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des catégories</h1>
+<h1>Gestion des destinations</h1>
 
 <a href="create.php" class="btn btn-primary">
     <i class="fa fa-plus"></i>
@@ -39,20 +39,24 @@ require_once '../../layout/header.php';
     <thead class="thead-light">
         <tr>
             <th>Libellé</th>
+            <th>Photo</th>
             <th class="actions">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($categories as $categorie) : ?>
+        <?php foreach ($destinations as $destination) : ?>
             <tr>
-                <td><?php echo $categorie['libelle']; ?></td>
+                <td><?php echo $destination['libelle']; ?></td>
+                <td>
+                    <img src="../../../uploads/<?php echo $destination['image']; ?>" class="img-thumbnail">
+                </td>
                 <td class="actions">
-                    <a href="update.php?id=<?php echo $categorie['id']; ?>" class="btn btn-warning">
+                    <a href="update.php?id=<?php echo $destination['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                         Modifier
                     </a>
                     <form action="delete_query.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $categorie['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $destination['id']; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                             Supprimer

@@ -10,15 +10,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/recette/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/recette/">
-                    <i class="fa fa-cutlery"></i>
-                    Recettes
+                <a class="nav-link <?php echo isActive("/crud/sejour/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/sejour/">
+                    <i class="fa fa-paper-plane"></i>
+                    Séjours
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo isActive("/crud/categorie/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/categorie/">
-                    <i class="fa fa-book"></i>
-                    Catégories
+                <a class="nav-link <?php echo isActive("/crud/destination/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/destination/">
+                    <i class="fa fa-flag"></i>
+                    Pays
                 </a>
             </li>
             <li class="nav-item">

@@ -7,15 +7,14 @@ function getAllSejours(int $limit = 999): array {
     $query = "
     SELECT 
       sejour.*,
-      DATE_FORMAT(recette.date_creation, '%d-%m-%Y') AS date_creation_format,
-      categorie.libelle AS categorie,
-      CONCAT(utilisateur.prenom, ' ', LEFT(utilisateur.nom, 1),'.') AS pseudo,
-      COUNT(favoris.utilisateur_id) AS nb_likes
+      DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
+      pays.libelle AS pays,
+      COUNT(utilisateur_has_depart.nb_participants) AS nb_participants
     FROM sejour
     INNER JOIN pays ON sejour.pays_id = pays.id
     INNER JOIN difficulte on sejour.difficulte_id = difficulte.id
     INNER JOIN depart on sejour.id = d.sejour_id
-    WHERE recette.publie = 1
+    LEFT JOIN utilisateur_has_depart on depart.id = utilisateur_has_depart.depart_id
     GROUP BY sejour.id
     LIMIT $limit
     ";
@@ -28,22 +27,22 @@ function getAllSejours(int $limit = 999): array {
 
 
 
-function getOneRecette(int $id): array{
+function getOneSejour(int $id): array{
     global $connection;
 
     $query = "
     SELECT 
-      recette.*,
-      DATE_FORMAT(recette.date_creation, '%d-%m-%Y') AS date_creation_format,
-      categorie.libelle AS categorie,
-      CONCAT(utilisateur.prenom, ' ', LEFT(utilisateur.nom, 1),'.') AS pseudo,
-      COUNT(favoris.utilisateur_id) AS nb_likes
-    FROM recette
-    INNER JOIN categorie ON recette.categorie_id = categorie.id
-    INNER JOIN utilisateur ON recette.utilisateur_id = utilisateur.id
-    LEFT JOIN favoris on recette.id = favoris.recette_id
-    WHERE recette.publie = 1 AND recette.id = :id
-    GROUP BY recette.id
+      sejour.*,
+      DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
+      pays.libelle AS pays,
+      COUNT(utilisateur_has_depart.nb_participants) AS nb_participants
+    FROM sejour
+    INNER JOIN pays ON sejour.pays_id = pays.id
+    INNER JOIN difficulte on sejour.difficulte_id = difficulte.id
+    INNER JOIN depart on sejour.id = d.sejour_id
+    LEFT JOIN utilisateur_has_depart on depart.id = utilisateur_has_depart.depart_id
+    WHERE sejour.id = :id
+    GROUP BY sejour.id
     ";
 
     $stmt = $connection->prepare($query);
@@ -54,7 +53,7 @@ function getOneRecette(int $id): array{
 }
 
 
-function insertRecette(string $titre, int $categorie_id, string $image, string $description, string $description_courte, int $couverts, string $temps_prepa, string $temps_cuisson, int $publie, int $utilisateur_id) {
+function insertSejour(string $titre, int $categorie_id, string $image, string $description, string $description_courte, int $couverts, string $temps_prepa, string $temps_cuisson, int $publie, int $utilisateur_id) {
     global $connection;
 
     $query = "
