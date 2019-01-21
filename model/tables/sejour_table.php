@@ -7,14 +7,10 @@ function getAllSejours(int $limit = 999): array {
     $query = "
     SELECT 
       sejour.*,
-      DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
-      pays.libelle AS pays,
-      COUNT(utilisateur_has_depart.nb_participants) AS nb_participants
+      pays.libelle AS pays
     FROM sejour
     INNER JOIN pays ON sejour.pays_id = pays.id
     INNER JOIN difficulte on sejour.difficulte_id = difficulte.id
-    INNER JOIN depart on sejour.id = d.sejour_id
-    LEFT JOIN utilisateur_has_depart on depart.id = utilisateur_has_depart.depart_id
     GROUP BY sejour.id
     LIMIT $limit
     ";

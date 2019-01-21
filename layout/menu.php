@@ -13,7 +13,7 @@ $destinations = getAllEntities("pays");
                 <a href="#0" class="dropdownStart">Destinations</a>
                 <ul class="dropdown">
                     <?php foreach ($destinations as $destination): ?>
-                        <li><a href="liste-sejours.php/<?= $destination["id"]; ?>"><?= $destination["libelle"]; ?></a></li>
+                        <li><a href="liste-sejours.php?id=<?= $destination["id"]; ?>"><?= $destination["libelle"]; ?></a></li>
                     <?php endforeach; ?>
                     <li><a href="liste-sejours.php">Toutes nos destinations</a></li>
                 </ul>

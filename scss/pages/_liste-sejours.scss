@@ -3,8 +3,13 @@
 
 
     .header-top {
-        background: url(../images/header-costarica.png) bottom no-repeat;
+
         background-color: $beige;
+
+        h1{
+            background: rgba(0, 0, 0, 0.31);
+            border-radius: 20px;
+        }
     }
 
 

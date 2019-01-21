@@ -1,16 +1,21 @@
-<article>
-    <a href="recipe.php?id=<?= $recipe["id"]; ?>">
-        <img src="images/<?= $recipe["image"] ?>" alt="<?= $recipe["titre"]; ?>"
-             class="img-responsive">
-    </a>
-    <h2><a href="recipe.php?id=<?= $recipe["id"]; ?>"><?= $recipe["titre"]; ?></a></h2>
-    <p><?= $recipe["description_courte"]; ?></p>
-    <footer>
-        <div class="label"><a href="#" class="like"><i
-                    class="fa fa-heart"></i></a> <?= $recipe["nb_likes"]; ?></div>
-        <div class="label"><i class="fa fa-cutlery"></i> <?= $recipe["categorie"]; ?></div>
-        <div class="label"><i class="fa fa-user"></i> <?= $recipe["pseudo"]; ?></div>
-        <div class="label"><i class="fa fa-calendar"></i> <?= $recipe["date_creation_format"]; ?>
+<article class="fiche-sejour">
+    <a href="sejour.php">
+        <img src="uploads/<?= $sejour['image']; ?>" alt="<?= $sejour['titre']; ?>">
+        <h2><?= $sejour['titre']; ?></h2>
+        <h3><?= $sejour['pays']; ?></h3>
+        <div class="infos-sejour">
+            <div class="duree">
+                <img src="./images/picto-duree.eps" alt="durée">
+                <p>14 jours</p>
+            </div>
+            <p class="difficulte">Difficulte : <img src="./images/barre-niveau-sejour2.png" alt="niveau 3/5">
+                <span class="infobulle" aria-label="Randonnées présentant plusieurs passages techniques, il est conseillé d'avoir une expérience de la randonnée en montagne pour suivre cet itinéraire."><img
+                            src="./images/infobulle.png" alt="infobulle"></span>
+            </p>
+            <div class="prix">
+                <img src="./images/picto-prix.eps" alt="prix">
+                <p>à partir de <span>1399 €</span></p>
+            </div>
         </div>
-    </footer>
+    </a>
 </article>

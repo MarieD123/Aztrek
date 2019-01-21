@@ -1,9 +1,11 @@
 <?php
 require_once "model/database.php";
 require_once "layout/header.php";
+
+
 ?>
 
-
+    <body>
 
     <header class="header-top" id="top">
 
@@ -19,38 +21,38 @@ require_once "layout/header.php";
 
             <div class="destinations">
                 <div class="photos-block photos-block-1">
-                    <a href="#" class="photo-destination" id="photo-1">
+                    <a href="#" class="photo-destination" id="photo-1" style="background-image: url('uploads/<?= getOneEntity("pays", 1)["image"]; ?>'); background-position: top; background-size: auto 120%;">
                         <div class="destination-color">
-                            <h3>Mexique</h3>
+                            <h3><?= getOneEntity("pays", 1)["libelle"]; ?></h3>
                         </div>
                     </a>
-                    <a href="#" class="photo-destination" id="photo-2">
+                    <a href="#" class="photo-destination" id="photo-2" style="background-image: url('uploads/<?= getOneEntity("pays", 2)["image"]; ?>');background-position: top right; background-size: auto 120%;">
                         <div class="destination-color">
-                            <h3>Guatemala</h3>
+                            <h3><?= getOneEntity("pays", 2)["libelle"]; ?></h3>
                         </div>
                     </a>
                 </div>
                 <div class="photos-block photos-block-2">
-                    <a href="#" class="photo-destination" id="photo-3">
+                    <a href="#" class="photo-destination" id="photo-3" style="background-image: url('uploads/<?= getOneEntity("pays", 3)["image"]; ?>');background-position: top; background-size: auto 120%;">
                         <div class="destination-color">
-                            <h3>Honduras</h3>
+                            <h3><?= getOneEntity("pays", 3)["libelle"]; ?></h3>
                         </div>
                     </a>
-                    <a href="#" class="photo-destination" id="photo-4">
+                    <a href="#" class="photo-destination" id="photo-4" style="background-image: url('uploads/<?= getOneEntity("pays", 4)["image"]; ?>');background-position: top; background-size: auto 120%;">
                         <div class="destination-color">
-                            <h3>Salvador</h3>
+                            <h3><?= getOneEntity("pays", 4)["libelle"]; ?></h3>
                         </div>
                     </a>
                 </div>
                 <div class="photos-block photos-block-3">
-                    <a href="#" class="photo-destination" id="photo-5">
+                    <a href="#" class="photo-destination" id="photo-5" style="background-image: url('uploads/<?= getOneEntity("pays", 5)["image"]; ?>'); background-position: top ; background-size: auto 120%;">
                         <div class="destination-color">
-                            <h3>Costa rica</h3>
+                            <h3><?= getOneEntity("pays", 5)["libelle"]; ?></h3>
                         </div>
                     </a>
                 </div>
             </div>
-            <a href="" class="btn-cta">Toutes nos destinations</a>
+            <a href="liste-sejours.php" class="btn-cta">Toutes nos destinations</a>
         </section>
     </main>
 

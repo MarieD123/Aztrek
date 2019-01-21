@@ -27,17 +27,32 @@ UPDATE pays SET libelle = :libelle, image = :image WHERE id = :id";
 
 
 
-function getAllPays(): array {
+function getAllPays(int $limit = 999): array {
     global $connection;
 
     $query = "
     SELECT 
-      pays.libelle AS pays
+      pays.libelle AS pays,
+      pays.image AS photo
     FROM pays
+    LIMIT $limit
     ";
 
     $stmt = $connection->prepare($query);
     $stmt -> execute();
 
     return $stmt->fetchAll();
+}
+
+function getOnePays(int $id): array
+{
+    global $connection;
+
+    $query = "SELECT pays.libelle FROM pays WHERE id = :id ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+
+    return $stmt->fetch();
 }
