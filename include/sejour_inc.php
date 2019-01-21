@@ -1,21 +1,22 @@
 <article class="fiche-sejour">
-    <a href="sejour.php">
+    <a href="sejour.php?id=<?= $sejour["id"]; ?>">
         <img src="uploads/<?= $sejour['image']; ?>" alt="<?= $sejour['titre']; ?>">
         <h2><?= $sejour['titre']; ?></h2>
         <h3><?= $sejour['pays']; ?></h3>
         <div class="infos-sejour">
             <div class="duree">
-                <img src="./images/picto-duree.eps" alt="durée">
-                <p>14 jours</p>
+                <i class="fa fa-hourglass"></i>
+                <p><?= $sejour['duree']; ?> jours</p>
             </div>
-            <p class="difficulte">Difficulte : <img src="./images/barre-niveau-sejour2.png" alt="niveau 3/5">
-                <span class="infobulle" aria-label="Randonnées présentant plusieurs passages techniques, il est conseillé d'avoir une expérience de la randonnée en montagne pour suivre cet itinéraire."><img
-                            src="./images/infobulle.png" alt="infobulle"></span>
-            </p>
+            <div class="difficulte difficulte-<?= $sejour['difficulte']; ?>">Difficulté :
+            </div>
+
+            <?php if(isset(getBetterPrice($sejour['id'])['prix'])) {?>
             <div class="prix">
-                <img src="./images/picto-prix.eps" alt="prix">
-                <p>à partir de <span>1399 €</span></p>
+                <i class="fa fa-tag"></i>
+                <p>à partir de <span><?= getBetterPrice($sejour['id'])['prix']; ?>€</span></p>
             </div>
+            <?php } ?>
         </div>
     </a>
 </article>

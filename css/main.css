@@ -1006,6 +1006,13 @@ main {
   ================================================================= */
   /* ------------ RESUME ------------- */
   /* ------------ ITINERAIRE ------------- */ }
+  .page-sejour .header-top {
+    min-height: 80px;
+    background-image: none; }
+  .page-sejour h1 {
+    animation-name: none; }
+  .page-sejour h2 {
+    text-align: center; }
   .page-sejour main {
     padding: 0; }
   .page-sejour .infos-cle {
@@ -1070,7 +1077,8 @@ main {
     padding: 70px 0; }
   .page-sejour .resume h3 {
     font-size: 1.2rem;
-    text-transform: none; }
+    text-transform: none;
+    margin-top: 0; }
   .page-sejour article.resume-yucatan {
     display: flex;
     padding: 70px 0; }
@@ -1078,10 +1086,14 @@ main {
     display: flex;
     flex-direction: column;
     flex-basis: 50%; }
+    .page-sejour .resume .description p {
+      text-align: justify;
+      padding: 10px; }
   .page-sejour .description .points-forts {
     margin: 20px 10px;
     background: #EEE6DF;
-    border-radius: 20px; }
+    border-radius: 20px;
+    padding: 20px; }
   .page-sejour .description .points-forts ul {
     padding: 0 15px; }
   .page-sejour .resume .infos-resume {
@@ -1124,7 +1136,8 @@ main {
   .page-sejour .itineraire ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; }
+    justify-content: space-around;
+    padding-left: 10px; }
   .page-sejour .itineraire a {
     color: black;
     font-weight: bold;
@@ -1244,24 +1257,9 @@ main {
       @media (min-width: 992px) {
         .liste-sejours main section {
           flex-basis: 75%; } }
-      .liste-sejours main section .infobulle {
-        position: relative;
-        cursor: help; }
       .liste-sejours main section .difficulte {
         text-align: center;
         margin: 10px auto 20px; }
-      .liste-sejours main section .infobulle:hover::after,
-      .liste-sejours main section .infobulle:focus::after {
-        content: attr(aria-label);
-        position: absolute;
-        z-index: 1;
-        min-width: 200px;
-        left: 100%;
-        bottom: 100%;
-        padding: 10px;
-        font-size: .7em;
-        background-color: white;
-        border: #542D25 solid 1px; }
       .liste-sejours main section .fiche-sejour {
         flex-basis: 96%;
         margin: 2%;
@@ -1282,11 +1280,34 @@ main {
         .liste-sejours main section .fiche-sejour a {
           display: flex;
           flex-direction: column;
-          align-items: center; }
+          align-items: center;
+          color: #66381B; }
+          .liste-sejours main section .fiche-sejour a i {
+            color: #DBBC94; }
         .liste-sejours main section .fiche-sejour .infos-sejour {
-          display: flex; }
-        .liste-sejours main section .fiche-sejour .infobulle img {
-          height: 15px;
-          width: 15px; }
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 0; }
+        .liste-sejours main section .fiche-sejour .duree, .liste-sejours main section .fiche-sejour .difficulte, .liste-sejours main section .fiche-sejour .prix {
+          flex-basis: 33%;
+          text-align: center; }
+
+.difficulte::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 13px;
+  margin-right: .25em;
+  background: url(../images/difficulte.png) no-repeat; }
+
+.difficulte-facile::after {
+  background-position: left top; }
+
+.difficulte-moyen::after {
+  background-position: left center; }
+
+.difficulte-difficile::after {
+  background-position: left bottom; }
 
 /*# sourceMappingURL=main.css.map */

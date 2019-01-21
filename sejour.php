@@ -1,47 +1,54 @@
 <?php
 
 require_once "model/database.php";
-require_once "layout/header.php";
+require_once "functions.php";
+
+$id = $_GET["id"];
+$sejour = getOneSejour($id);
+
+$titre_etape = getAllEtapesBySejour($id);
+
+
+
+getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
 
 
 ?>
 
 <body class="page-sejour">
-    <header class="header-yucatan">
-        <?php require_once "layout/menu.php"?>
+    <header class="header-top">
+        <?php getMenu();?>
     </header>
 
     <main>
         <section class="resume">
-            <h1 class="vert">Caminando Mexico</h1>
+            <h1 class="vert"><?= $sejour["titre"]; ?></h1>
             <article class="resume-yucatan container">
                 <div class="description">
-                    <p>Bienvenue aux randonneurs pour une découverte énergisante
-                        du Mexique ! L’altiplano et les légendes de ses volcans
-                        majestueux, le Chiapas et son exubérante forêt tropicale, le
-                        Yucatán et ses inoubliables sites mayas constituent la colonne
-                        vertébrale de ce voyage conçu pour qui souhaite allier marche et
-                        culture. Randonner au Paso de Cortés et sur le volcan La
-                        Malinche (4461m), qui font référence à des personnages
-                        déterminants de l’Histoire du Mexique, c’est en comprendre le
-                        passé tourmenté.</p>
+                    <p><?= $sejour["description_courte"]; ?></p>
                     <div class="points-forts caminando">
                         <h3 class="vert">vous apprécierez :</h3>
                         <ul>
-                            <li>Un voyage mêlant randonnée et visites culturelles</li>
-                            <li>L’ascension du volcan La Malinche, à 4461m </li>
-                            <li>Un itinéraire complet, de Mexico au Yucatán</li>
-                            <li>Une approche originale, à pied, des sites mayas</li>
+                            <li>
+                        <?php
+                        $pts_forts_list = $sejour['pts_forts'];
+                        echo str_replace(', ', '</li><li>', $pts_forts_list);
+                        ?>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="infos-resume caminando">
-                    <img src="./images/img-resume-caminando.jpg" alt="palenque">
+                    <img src="uploads/<?= $sejour["image"]; ?>" alt="palenque">
                     <ul>
-                        <li class="info-prix">À partir de <strong>1 389 €</strong></li>
-                        <li class="info-duree">5 jours</li>
-                        <li class="info-niveau">niveau <span><img src="./images/barre-niveau-sejour2.png" alt="niveau 2/5">
-                            <span class="infobulle" aria-label="Itinéraire principalement sur des bons sentiers pouvant présenter quelques passages techniques, accessible sans expérience de la randonnée."><img src="./images/infobulle.png" alt="infobulle"></span></span></li>
+                        <?php if(isset(getBetterPrice($sejour['id'])['prix'])) {?>
+                            <li class="infp-prix">
+                                à partir de <span><?= getBetterPrice($sejour['id'])['prix']; ?>€</span>
+                            </li>
+                        <?php } ?>
+                        <li class="info-duree"><?= $sejour['duree']; ?> jours</li>
+                        <li class="info-niveau"><div class="difficulte difficulte-<?= $sejour['difficulte']; ?>">Difficulté :
+                            </div></li>
                     </ul>
                 </div>
             </article>
@@ -51,7 +58,7 @@ require_once "layout/header.php";
             <h2 class="vert">Itinéraire</h2>
             <div class="container">
                 <div class="map">
-                    <iframe width="620px" height="414px" frameBorder="0" allowfullscreen src="http://umap.openstreetmap.fr/fr/map/caminando-mexico_255975?scaleControl=true&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=false&embedControl=null&datalayersControl=false&onLoadPanel=none&captionBar=false&datalayers=655482&fullscreenControl=false&locateControl=false&measureControl=false&editinosmControl=false#6/19.228/-93.318"></iframe>
+                    <img src="./uploads/<?= $sejour['itineraire']; ?>" alt="carte de l'itinéraire">
                 </div>
                 <ul class="caminando">
                     <li><a href="#j1">J1 : Vol pour Mexico</a></li>
@@ -172,4 +179,4 @@ require_once "layout/header.php";
 
     </main>
 
-<?php require_once "layout/footer.php";?>
+<?php getFooter();?>

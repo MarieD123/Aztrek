@@ -1,6 +1,8 @@
 <?php
 require_once "model/database.php";
-require_once "layout/header.php";
+require_once "functions.php";
+
+getHeader("Accueil", "Atrek, agence de voyages en Amérique centrale")
 
 
 ?>
@@ -9,7 +11,7 @@ require_once "layout/header.php";
 
     <header class="header-top" id="top">
 
-        <?php require_once "layout/menu.php";?>
+        <?php getMenu();?>
 
         <h1>Un nouveau monde à chaque pas</h1>
     </header>
@@ -197,4 +199,4 @@ require_once "layout/header.php";
         </div>
     </section>
 
-<?php require_once "layout/footer.php";?>
+<?php getFooter();?>

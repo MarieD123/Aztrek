@@ -7,7 +7,8 @@ function getAllSejours(int $limit = 999): array {
     $query = "
     SELECT 
       sejour.*,
-      pays.libelle AS pays
+      pays.libelle AS pays,
+      difficulte.libelle AS difficulte
     FROM sejour
     INNER JOIN pays ON sejour.pays_id = pays.id
     INNER JOIN difficulte on sejour.difficulte_id = difficulte.id
@@ -29,13 +30,12 @@ function getOneSejour(int $id): array{
     $query = "
     SELECT 
       sejour.*,
-      DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
       pays.libelle AS pays,
-      COUNT(utilisateur_has_depart.nb_participants) AS nb_participants
+      difficulte.libelle AS difficulte
     FROM sejour
     INNER JOIN pays ON sejour.pays_id = pays.id
     INNER JOIN difficulte on sejour.difficulte_id = difficulte.id
-    INNER JOIN depart on sejour.id = d.sejour_id
+    LEFT JOIN depart on sejour.id = depart.sejour_id
     LEFT JOIN utilisateur_has_depart on depart.id = utilisateur_has_depart.depart_id
     WHERE sejour.id = :id
     GROUP BY sejour.id
@@ -69,4 +69,65 @@ function insertSejour(string $titre, int $categorie_id, string $image, string $d
     $stmt->bindParam(":categorie_id", $categorie_id);
     $stmt->bindParam(":utilisateur_id", $utilisateur_id);
     $stmt->execute();
+}
+
+function getBetterPrice(int $id){
+    global $connection;
+
+    $query="
+      SELECT depart.*,
+             sejour.*
+      FROM depart
+      INNER JOIN sejour on depart.sejour_id = sejour.id
+      WHERE sejour_id = :id
+      ORDER BY prix
+      LIMIT 1
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt -> execute();
+
+    return $stmt->fetch();
+}
+
+
+function getAllDepartsBySejour(int $id): array {
+    global $connection;
+
+    $query = "
+    SELECT 
+        depart.*,
+        sejour.*        
+    FROM depart
+    LEFT JOIN sejour on depart.sejour_id = sejour.id
+    WHERE sejour_id = :id
+    
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt -> execute();
+
+    return $stmt->fetchAll();
+}
+
+function getAllEtapesBySejour(int $id): array {
+    global $connection;
+
+    $query = "
+    SELECT 
+        etape.*,
+        sejour.*        
+    FROM etape
+    LEFT JOIN sejour on etape.sejour_id = sejour.id
+    WHERE sejour_id = :id
+    
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt -> execute();
+
+    return $stmt->fetchAll();
 }

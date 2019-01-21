@@ -50,29 +50,12 @@
                 flex-basis: 75%
             }
 
-            .infobulle {
-                position: relative;
-                cursor: help;
-            }
 
             .difficulte {
                 text-align: center;
                 margin: 10px auto 20px;
             }
 
-            .infobulle:hover::after,
-            .infobulle:focus::after {
-                content: attr(aria-label);
-                position: absolute;
-                z-index: 1;
-                min-width: 200px;
-                left: 100%;
-                bottom: 100%;
-                padding: 10px;
-                font-size: .7em;
-                background-color: white;
-                border: #542D25 solid 1px;
-            }
 
             .fiche-sejour {
                 flex-basis: 96%;
@@ -102,17 +85,48 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    color: $brown;
+
+                    i{
+                        color: #DBBC94;
+                    }
                 }
 
                 .infos-sejour{
                     display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px 0;
                 }
 
-                .infobulle img{
-                    height: 15px;
-                    width: 15px;
+                .duree, .difficulte, .prix {
+                    flex-basis: 33%;
+                    text-align: center;
                 }
+
+
             }
         }
     }
+}
+
+.difficulte::after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    margin-right: .25em;
+    background: url(../images/difficulte.png) no-repeat;
+}
+
+.difficulte-facile::after {
+    background-position: left top;
+}
+
+.difficulte-moyen::after {
+    background-position: left center;
+}
+
+.difficulte-difficile::after {
+    background-position: left bottom;
 }

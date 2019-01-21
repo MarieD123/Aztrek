@@ -21,3 +21,8 @@ function getAllIngredientsByRecette(int $id): array {
 
     return $stmt->fetchAll();
 }
+
+
+
+
+

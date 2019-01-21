@@ -1,6 +1,8 @@
 <?php
 require_once "model/database.php";
-require_once "layout/header.php";
+require_once "functions.php";
+
+getHeader("Découvrez nos séjours", "Atrek, agence de voyages en Amérique centrale");
 
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
@@ -14,7 +16,7 @@ $sejours = getAllSejours();
 <header class="header-top" id="top"
         style="background: url('uploads/<?= getOneEntity("pays", $id)["image"]; ?>') bottom no-repeat;">
 
-    <?php require_once "layout/menu.php"; ?>
+    <?php getMenu(); ?>
 
 
 
@@ -133,4 +135,4 @@ $sejours = getAllSejours();
     </section>
 </main>
 
-<?php require_once "layout/footer.php"; ?>
+<?php getFooter(); ?>
