@@ -56,3 +56,23 @@ function getOnePays(int $id): array
 
     return $stmt->fetch();
 }
+
+function getAllSejoursByPays(int $id): array {
+    global $connection;
+
+    $query = "
+    SELECT 
+        pays.*,
+        sejour.*        
+    FROM sejour
+    LEFT JOIN pays on sejour.pays_id = pays.id
+    WHERE pays_id = :id
+    
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt -> execute();
+
+    return $stmt->fetchAll();
+}

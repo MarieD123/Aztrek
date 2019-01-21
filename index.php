@@ -7,7 +7,7 @@ getHeader("Accueil", "Atrek, agence de voyages en Amérique centrale")
 
 ?>
 
-    <body>
+    <body class="accueil">
 
     <header class="header-top" id="top">
 

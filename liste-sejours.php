@@ -9,7 +9,7 @@ if (isset($_GET["id"])) {
     $pays = getOnePays($id);
 }
 
-$sejours = getAllSejours();
+$sejours = getAllSejoursByPays($id);
 ?>
 
     <body class="liste-sejours"><?php if (isset($id)) { ?>

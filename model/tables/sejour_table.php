@@ -118,7 +118,7 @@ function getAllEtapesBySejour(int $id): array {
     $query = "
     SELECT 
         etape.*,
-        sejour.*        
+        sejour.id        
     FROM etape
     LEFT JOIN sejour on etape.sejour_id = sejour.id
     WHERE sejour_id = :id
@@ -131,3 +131,4 @@ function getAllEtapesBySejour(int $id): array {
 
     return $stmt->fetchAll();
 }
+

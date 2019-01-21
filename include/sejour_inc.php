@@ -2,7 +2,7 @@
     <a href="sejour.php?id=<?= $sejour["id"]; ?>">
         <img src="uploads/<?= $sejour['image']; ?>" alt="<?= $sejour['titre']; ?>">
         <h2><?= $sejour['titre']; ?></h2>
-        <h3><?= $sejour['pays']; ?></h3>
+        <h3><?= $sejour['libelle']; ?></h3>
         <div class="infos-sejour">
             <div class="duree">
                 <i class="fa fa-hourglass"></i>

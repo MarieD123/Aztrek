@@ -382,6 +382,9 @@ h4 {
 .bg-transparent {
   background-color: rgba(255, 255, 255, 0.5); }
 
+.accueil .bg-transparent {
+  background-color: transparent; }
+
 .bg-white {
   background-color: #F7EEEA; }
 
@@ -1108,7 +1111,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 10px 0;
     margin: 0; }
   .page-sejour .infos-resume li {
     flex-basis: 33.33%;
@@ -1169,17 +1172,15 @@ main {
     margin-right: 20px; }
   .page-sejour .etape .photo {
     border: #542D25 solid 2px;
-    margin: 0 10px; }
-  .page-sejour #photo2,
-  .page-sejour #photo4,
-  .page-sejour #photo6 {
-    margin-top: 40px; }
+    margin: 0 10px;
+    max-width: 220px;
+    margin-left: auto;
+    margin-top: auto; }
   .page-sejour .etape .details {
     display: flex;
     flex-direction: column; }
-  .page-sejour .impair {
-    display: flex;
-    align-items: flex-start; }
+    .page-sejour .etape .details p {
+      margin: 0 10px; }
   .page-sejour .etape ul {
     padding: 0; }
   .page-sejour .bleu {
