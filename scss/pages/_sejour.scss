@@ -7,10 +7,12 @@
 
   h1 {
     animation-name: none;
+    color: $green;
   }
 
   h2 {
     text-align: center;
+    color: $green;
   }
 
   main {
@@ -145,6 +147,11 @@
 
   .description .points-forts ul {
     padding: 0 15px;
+
+    li::before {
+      content: '• ';
+      color: $green;
+    }
   }
 
 
@@ -198,7 +205,6 @@
   .itineraire h2,
   .etapes h2 {
     font-size: 2.25rem;
-    color: #199595;
   }
 
 
@@ -283,11 +289,10 @@
     display: flex;
     flex-direction: column;
 
-    p{
+    p {
       margin: 0 10px;
     }
   }
-
 
 
   .etape ul {
@@ -295,107 +300,36 @@
   }
 
 
-  /* ================================================================
-                          PAGE SEJOUR YUCATAN
-  ================================================================= */
+}
 
-  .bleu {
-    color: #199595;
+.departs {
+
+  padding-bottom: 50px;
+  text-align: center;
+
+  h2 {
+    padding: 50px 0;
+    margin: 0;
   }
 
-  /* ------------ RESUME ------------- */
+  table {
+    margin: 0 auto;
+    text-align: center;
 
+    border-collapse: collapse;
+    border-spacing: 0;
 
-  .description .yucatan li::before {
-    content: '• ';
-    color: #199595;
+    th, td {
+      padding: 10px 20px;
+    }
+
+    th {
+      border-bottom: $dark-green solid;
+      border-top: $dark-green solid;
+    }
   }
 
-
-  .yucatan .info-duree {
-    border-right: #199595 solid 1px;
-    border-left: #199595 1px solid;
+  tbody tr:nth-child(even){
+    background-color: $dark-beige;
   }
-
-  /* ------------ ITINERAIRE ------------- */
-
-  .yucatan ul a:hover,
-  .yucatan ul a:focus {
-    background-color: #199595;
-    color: #fff;
-  }
-
-
-  /* ================================================================
-                        PAGE SEJOUR CAMINANDO
-  ================================================================= */
-
-  .vert,
-  .itineraire .vert,
-  .etapes .vert {
-    color: #139429;
-  }
-
-
-  /* ------------ RESUME ------------- */
-
-
-  .description .caminando li::before {
-    content: '• ';
-    color: #139429;
-  }
-
-  .caminando .info-duree {
-    border-right: #139429 solid 1px;
-    border-left: #139429 1px solid;
-  }
-
-  /* ------------ ITINERAIRE ------------- */
-
-  .caminando ul a:hover,
-  .caminando ul a:focus {
-    background-color: #139429;
-    color: #fff;
-  }
-
-  /* ------------ ETAPES ------------- */
-
-  #j3 ul {
-    margin: 0 0 0 10px;
-  }
-
-
-  /* ================================================================
-                          PAGE SEJOUR VOLCANS
-  ================================================================= */
-
-  .orange,
-  .itineraire .orange,
-  .etapes .orange {
-    color: #FF4100;
-  }
-
-
-  /* ------------ RESUME ------------- */
-
-
-  .description .volcans li::before {
-    content: '• ';
-    color: #FF4100;
-  }
-
-  .volcans .info-duree {
-    border-right: #FF4100 solid 1px;
-    border-left: #FF4100 1px solid;
-  }
-
-  /* ------------ ITINERAIRE ------------- */
-
-  .volcans ul a:hover,
-  .volcans ul a:focus {
-    background-color: #FF4100;
-    color: #fff;
-  }
-
-
 }

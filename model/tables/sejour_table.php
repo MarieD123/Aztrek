@@ -98,9 +98,12 @@ function getAllDepartsBySejour(int $id): array {
     $query = "
     SELECT 
         depart.*,
-        sejour.*        
+          DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
+        sejour.*,
+           DATE_FORMAT(ADDDATE(depart.date_depart, sejour.duree), '%d-%m-%Y') AS date_retour_format
     FROM depart
     LEFT JOIN sejour on depart.sejour_id = sejour.id
+    INNER JOIN utilisateur_has_depart uhd on depart.id = uhd.depart_id
     WHERE sejour_id = :id
     
     ";
@@ -122,6 +125,31 @@ function getAllEtapesBySejour(int $id): array {
     FROM etape
     LEFT JOIN sejour on etape.sejour_id = sejour.id
     WHERE sejour_id = :id
+    
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt -> execute();
+
+    return $stmt->fetchAll();
+}
+
+function getParticipantsByDepart(int $id): array {
+    global $connection;
+
+    $query = "
+
+    SELECT 
+        depart.*,
+          DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
+        sejour.*,
+           DATE_FORMAT(ADDDATE(depart.date_depart, sejour.duree), '%d-%m-%Y') AS date_retour_format,
+           SUM(sejour.nb_places - uhd.nb_participants) AS places_dispo
+    FROM depart
+    LEFT JOIN sejour on depart.sejour_id = sejour.id
+    LEFT JOIN utilisateur_has_depart uhd on depart.id = uhd.depart_id
+    WHERE sejour_id = :id AND depart.id = uhd.depart_id
     
     ";
 

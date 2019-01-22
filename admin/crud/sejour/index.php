@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$recipes = getAllRecettes();
+$sejours = getAllSejours();
 
 $error_msg = null;
 if (isset($_GET['errcode'])) {
@@ -39,30 +39,34 @@ require_once '../../layout/header.php';
     <thead class="thead-light">
         <tr>
             <th>Titre</th>
+            <th>Pays</th>
+            <th>Difficulté</th>
             <th>Image</th>
-            <th>Catégorie</th>
-            <th>Auteur</th>
-            <th>Date de création</th>
+            <th>Itinéraire</th>
+            <th>Durée</th>
+            <th>Nombre de places</th>
             <th class="actions">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($recipes as $recipe) : ?>
+        <?php foreach ($sejours as $sejour) : ?>
             <tr>
-                <td><?php echo $recipe['titre']; ?></td>
+                <td><?php echo $sejour['titre']; ?></td>
+                <td><?php echo $sejour['pays']; ?></td>
+                <td><?php echo $sejour['difficulte']; ?></td>
                 <td>
-                    <img src="../../../uploads/<?php echo $recipe['image']; ?>" class="img-thumbnail">
+                    <img src="../../../uploads/<?php echo $sejour['image']; ?>" class="img-thumbnail">
                 </td>
-                <td><?php echo $recipe['categorie']; ?></td>
-                <td><?php echo $recipe['pseudo']; ?></td>
-                <td><?php echo $recipe['date_creation_format']; ?></td>
+                <td><img src="../../../uploads/<?php echo $sejour['itineraire']; ?>" class="img-thumbnail"></td>
+                <td><?php echo $sejour['duree']; ?></td>
+                <td><?php echo $sejour['nb_places']; ?></td>
                 <td class="actions">
-                    <a href="update.php?id=<?php echo $recipe['id']; ?>" class="btn btn-warning">
+                    <a href="update.php?id=<?php echo $sejour['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                         Modifier
                     </a>
                     <form action="delete_query.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $recipe['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $sejour['id']; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                             Supprimer

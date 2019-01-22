@@ -5,6 +5,7 @@ require_once __DIR__ . '/../model/database.php';
 
 $user = null;
 
+
 if (isset($_SESSION['id'])) {
     // L'utilisateur est déjà connecté
     $user = getOneEntity('utilisateur', $_SESSION['id']);

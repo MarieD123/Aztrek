@@ -992,30 +992,16 @@ main {
   */
   /* ----------- SECTION RESUME ---------------- */
   /* ----------- SECTION ITINERAIRE ---------------- */
-  /* ----------- SECTION ETAPES ---------------- */
-  /* ================================================================
-                          PAGE SEJOUR YUCATAN
-  ================================================================= */
-  /* ------------ RESUME ------------- */
-  /* ------------ ITINERAIRE ------------- */
-  /* ================================================================
-                        PAGE SEJOUR CAMINANDO
-  ================================================================= */
-  /* ------------ RESUME ------------- */
-  /* ------------ ITINERAIRE ------------- */
-  /* ------------ ETAPES ------------- */
-  /* ================================================================
-                          PAGE SEJOUR VOLCANS
-  ================================================================= */
-  /* ------------ RESUME ------------- */
-  /* ------------ ITINERAIRE ------------- */ }
+  /* ----------- SECTION ETAPES ---------------- */ }
   .page-sejour .header-top {
     min-height: 80px;
     background-image: none; }
   .page-sejour h1 {
-    animation-name: none; }
+    animation-name: none;
+    color: #4A8B2C; }
   .page-sejour h2 {
-    text-align: center; }
+    text-align: center;
+    color: #4A8B2C; }
   .page-sejour main {
     padding: 0; }
   .page-sejour .infos-cle {
@@ -1099,6 +1085,9 @@ main {
     padding: 20px; }
   .page-sejour .description .points-forts ul {
     padding: 0 15px; }
+    .page-sejour .description .points-forts ul li::before {
+      content: '• ';
+      color: #4A8B2C; }
   .page-sejour .resume .infos-resume {
     display: flex;
     flex-direction: column;
@@ -1129,8 +1118,7 @@ main {
     padding: 70px 0 50px; }
   .page-sejour .itineraire h2,
   .page-sejour .etapes h2 {
-    font-size: 2.25rem;
-    color: #199595; }
+    font-size: 2.25rem; }
   .page-sejour .itineraire .container {
     display: flex;
     margin: 40px auto; }
@@ -1183,48 +1171,25 @@ main {
       margin: 0 10px; }
   .page-sejour .etape ul {
     padding: 0; }
-  .page-sejour .bleu {
-    color: #199595; }
-  .page-sejour .description .yucatan li::before {
-    content: '• ';
-    color: #199595; }
-  .page-sejour .yucatan .info-duree {
-    border-right: #199595 solid 1px;
-    border-left: #199595 1px solid; }
-  .page-sejour .yucatan ul a:hover,
-  .page-sejour .yucatan ul a:focus {
-    background-color: #199595;
-    color: #fff; }
-  .page-sejour .vert,
-  .page-sejour .itineraire .vert,
-  .page-sejour .etapes .vert {
-    color: #139429; }
-  .page-sejour .description .caminando li::before {
-    content: '• ';
-    color: #139429; }
-  .page-sejour .caminando .info-duree {
-    border-right: #139429 solid 1px;
-    border-left: #139429 1px solid; }
-  .page-sejour .caminando ul a:hover,
-  .page-sejour .caminando ul a:focus {
-    background-color: #139429;
-    color: #fff; }
-  .page-sejour #j3 ul {
-    margin: 0 0 0 10px; }
-  .page-sejour .orange,
-  .page-sejour .itineraire .orange,
-  .page-sejour .etapes .orange {
-    color: #FF4100; }
-  .page-sejour .description .volcans li::before {
-    content: '• ';
-    color: #FF4100; }
-  .page-sejour .volcans .info-duree {
-    border-right: #FF4100 solid 1px;
-    border-left: #FF4100 1px solid; }
-  .page-sejour .volcans ul a:hover,
-  .page-sejour .volcans ul a:focus {
-    background-color: #FF4100;
-    color: #fff; }
+
+.departs {
+  padding-bottom: 50px;
+  text-align: center; }
+  .departs h2 {
+    padding: 50px 0;
+    margin: 0; }
+  .departs table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0; }
+    .departs table th, .departs table td {
+      padding: 10px 20px; }
+    .departs table th {
+      border-bottom: #002C00 solid;
+      border-top: #002C00 solid; }
+  .departs tbody tr:nth-child(even) {
+    background-color: #E0D4CC; }
 
 .liste-sejours {
   background-color: #F7EEEA; }
