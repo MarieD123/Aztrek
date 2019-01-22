@@ -7,6 +7,7 @@ getHeader("Découvrez nos séjours", "Atrek, agence de voyages en Amérique cent
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
     $pays = getOnePays($id);
+
 }
 
 $sejours = getAllSejoursByPays($id);

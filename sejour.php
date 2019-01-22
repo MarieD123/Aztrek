@@ -8,6 +8,7 @@ $sejour = getOneSejour($id);
 
 $etapes = getAllEtapesBySejour($id);
 $departs = getAllDepartsBySejour($id);
+$place = getParticipantsByDepart($id);
 
 
 getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
@@ -95,30 +96,39 @@ getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
     <section class="departs">
         <h2>Prochains départs</h2>
 
-        <?php if($departs) : ?>
-        <TABLE>
-            <TR>
-                <TH>Du</TH>
-                <TH>Au</TH>
-                <TH>Prix</TH>
-                <TH>Départ assuré à partir de</TH>
-                <th>Réservation</th>
-            </TR>
+        <?php if ($departs) : ?>
+            <TABLE>
+                <TR>
+                    <TH>Du</TH>
+                    <TH>Au</TH>
+                    <TH>Prix</TH>
+                    <TH>Départ assuré à partir de</TH>
+                    <th>Réservation</th>
+                </TR>
 
-            <?php foreach ($departs as $depart) : ?>
+                <?php foreach ($departs as $depart) : ?>
                 <TR>
                     <Td> <?= $depart["date_depart_format"]; ?></Td>
                     <TD> <?= $depart["date_retour_format"]; ?></TD>
-                    <TD> <?= $depart["prix"]; ?>€ </TD>
-                    <TD> Assuré à partir de 4</TD>
+                    <TD> <?= $depart["prix"]; ?>€</TD>
+                    <?php if(getParticipantsByDepart( $depart["id"])["places_dispo"] == 0 ): ?>
+                        <td>Complet</td>
+                    <?php elseif(getParticipantsByDepart( $depart["id"])["places_dispo"] >= 4 ) : ?>
+                        <td>Départ assuré (<?= getParticipantsByDepart( $depart["id"])["places_dispo"]; ?>)</td>
+                    <?php elseif(getParticipantsByDepart( $depart["id"])["places_dispo"] == 3 ) : ?>
+                        <td>Départ assuré au prochain inscrit</td>
+                    <?php else : ?>
+                        <td>Départ assuré dès 4 inscrits</td>
+                    <?php endif; ?>
                     <td><a href="" class="btn-cta btn-green">S'inscrire</a></td>
-                </TR>
-            <?php endforeach; ?>
 
-        </TABLE>
+                </TR>
+                <?php endforeach; ?>
+
+            </TABLE>
         <?php else: ?>
-        <p>De nouvelles dates de départs seront bientôt disponibles.</p>
-    <?php endif; ?>
+            <p>De nouvelles dates de départs seront bientôt disponibles.</p>
+        <?php endif; ?>
     </section>
 
 </main>

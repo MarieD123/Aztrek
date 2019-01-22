@@ -3,19 +3,31 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 $titre = $_POST['titre'];
-$categorie_id = $_POST['categorie_id'];
-$description = $_POST['description'];
+$pays_id = $_POST['pays_id'];
+$duree = $_POST['duree'];
+$difficulte_id = $_POST['difficulte_id'];
+$nb_places = $_POST['places'];
 $description_courte = $_POST['description_courte'];
-$couverts = $_POST['couverts'];
-$temps_prepa = $_POST['temps_prepa'];
-$temps_cuisson = $_POST['temps_cuisson'];
-$publie = ($_POST['publie'] == "on") ? 1 : 0;
+$pts_forts = $_POST['pts_forts'];
 
-// Upload de l'image
-$filename = $_FILES["image"]["name"];
-$tmp = $_FILES["image"]["tmp_name"];
+
+// Upload de l'image principale
+$filename_1 = $_FILES["image"]["name"];
+$tmp_1 = $_FILES["image"]["tmp_name"];
 move_uploaded_file($tmp, "../../../uploads/" . $filename);
 
-insertRecette($titre, $categorie_id, $filename, $description, $description_courte, $couverts, $temps_prepa, $temps_cuisson, $publie, $user["id"]);
+// Upload de l'image de l'itineraire
+$filename_2 = $_FILES["itineraire"]["name"];
+$tmp_2 = $_FILES["itineraire"]["tmp_name"];
+move_uploaded_file($tmp, "../../../uploads/" . $filename);
+
+// Upload de l'image secondaire
+$filename_3 = $_FILES["image_secondaire"]["name"];
+$tmp_3 = $_FILES["image_secondaire"]["tmp_name"];
+move_uploaded_file($tmp, "../../../uploads/" . $filename);
+
+
+
+insertSejour($titre, $pays_id, $filename_1, $filename_2, $filename_3, $duree, $difficulte_id, $nb_places, $description_courte, $pts_forts);
 
 header('Location: index.php');

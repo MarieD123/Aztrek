@@ -1,6 +1,10 @@
-<?php require_once __DIR__."/../config/parameters.php";
+<?php
+require_once __DIR__."/../config/parameters.php";
+require_once __DIR__."/../functions.php";
 
+$user = getCurrentUser();
 $destinations = getAllEntities("pays");
+
 ?>
 
 <div class="container-fixed">
@@ -22,7 +26,24 @@ $destinations = getAllEntities("pays");
             <li class="item"><a href="#0">Qui sommes nous ?</a></li>
             <li class="item"><a href="#0">Blog</a></li>
             <li class="item"><a href="#0">Contact</a></li>
-            <li class="item"><a href="#0"><i class="fas fa-user"></i> Espace client</a></li>
+
+                <?php if(isset($user)) :?>
+                    <li class="item"><a href="#0"><i class="fa fa-user"></i> <?= pseudo()['pseudo']; ?></a>
+                        <ul>
+                            <li class="item"><a href="<?= SITE_ADMIN."logout.php"; ?>"><i class="fa fa-sign-out"></i> Déconnexion </a></li>
+                        </ul>
+                    </li>
+
+            <?php else: ?>
+                    <li class="item"><a href="<?= SITE_ADMIN; ?>"><i class="fa fa-sign-in"></i> Espace membre</a>
+                        <ul>
+                            <li class="item"><a href="<?= SITE_ADMIN; ?>"><i class="fa fa-sign-in"></i> Connexion</a>
+                            <li class="item"><a href="<?= SITE_URL . "create_account.php"; ?>"><i class="fa fa-user-plus"></i> S'inscrire</a></li>
+                        </ul>
+                    </li>
+
+            <?php endif; ?>
+
 
         </ul>
 

@@ -23,14 +23,14 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa fa-tags"></i>
-                    Tags
+                    <i class="fa fa-calendar"></i>
+                    Départs
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa fa-comments"></i>
-                    Commentaires
+                    <i class="fa fa-road"></i>
+                    Etapes
                 </a>
             </li>
         </ul>

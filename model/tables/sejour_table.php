@@ -49,25 +49,25 @@ function getOneSejour(int $id): array{
 }
 
 
-function insertSejour(string $titre, int $categorie_id, string $image, string $description, string $description_courte, int $couverts, string $temps_prepa, string $temps_cuisson, int $publie, int $utilisateur_id) {
+function insertSejour($titre, $pays_id, $image, $itineraire, $image_secondaire, $duree, $difficulte_id, $nb_places, $description_courte, $pts_forts) {
     global $connection;
 
     $query = "
-    INSERT INTO recette (titre, image, description, description_courte, couverts, temps_prepa, temps_cuisson, publie, date_creation, utilisateur_id, categorie_id) 
-    VALUES (:titre, :image, :description, :description_courte, :couverts, :temps_prepa, :temps_cuisson, :publie, NOW(), :utilisateur_id, :categorie_id)
+    INSERT INTO sejour (titre, pays_id, image, itineraire, image_secondaire duree, description_courte, difficulte_id, nb_places,pts_forts ) 
+    VALUES (:titre, :pays_id, :image, :itineraire, :image_secondaire :duree, :description_courte, :difficulte_id, :nb_places, :pts_forts )
     ";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":titre", $titre);
+    $stmt->bindParam(":pays_id", $pays_id);
     $stmt->bindParam(":image", $image);
-    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":itineraire", $itineraire);
+    $stmt->bindParam(":image_secondaire", $image_secondaire);
+    $stmt->bindParam(":duree", $duree);
     $stmt->bindParam(":description_courte", $description_courte);
-    $stmt->bindParam(":couverts", $couverts);
-    $stmt->bindParam(":temps_prepa", $temps_prepa);
-    $stmt->bindParam(":temps_cuisson", $temps_cuisson);
-    $stmt->bindParam(":publie", $publie);
-    $stmt->bindParam(":categorie_id", $categorie_id);
-    $stmt->bindParam(":utilisateur_id", $utilisateur_id);
+    $stmt->bindParam(":difficulte_id", $difficulte_id);
+    $stmt->bindParam(":nb_places", $nb_places);
+    $stmt->bindParam(":pts_forts", $pts_forts);
     $stmt->execute();
 }
 
@@ -135,6 +135,10 @@ function getAllEtapesBySejour(int $id): array {
     return $stmt->fetchAll();
 }
 
+
+
+
+
 function getParticipantsByDepart(int $id): array {
     global $connection;
 
@@ -145,12 +149,12 @@ function getParticipantsByDepart(int $id): array {
           DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
         sejour.*,
            DATE_FORMAT(ADDDATE(depart.date_depart, sejour.duree), '%d-%m-%Y') AS date_retour_format,
-           SUM(sejour.nb_places - uhd.nb_participants) AS places_dispo
+           sejour.nb_places - SUM(uhd.nb_participants) AS places_dispo
     FROM depart
     LEFT JOIN sejour on depart.sejour_id = sejour.id
     LEFT JOIN utilisateur_has_depart uhd on depart.id = uhd.depart_id
     WHERE sejour_id = :id AND depart.id = uhd.depart_id
-    
+    GROUP BY depart.id
     ";
 
     $stmt = $connection->prepare($query);

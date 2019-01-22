@@ -1,6 +1,7 @@
 <?php
 
-function debug($var, bool $die = true) {
+function debug($var, bool $die = true)
+{
     echo "<pre>";
     print_r($var);
     echo "</pre>";
@@ -9,24 +10,40 @@ function debug($var, bool $die = true) {
     }
 }
 
+function getCurrentUser(){
+    //Démarrer la session si pas encore démarrée
+    if (!isset($_SESSION)){
+        session_start();
+    }
+    //Récupérer l'utilisateur en cours si connecté
+    if (isset($_SESSION['id'])) {
+        return getOneEntity("utilisateur", $_SESSION['id']);
+    }
+    return null;
+}
+
 /**
  * Affiche le contenu du fichier header.php
  * @param string $title Titre de la page
  * @param string $description MetaDescription de la page
  */
-function getHeader(string $title, string $description, array $stylesheets = []) {
+function getHeader(string $title, string $description, array $stylesheets = [])
+{
     require_once 'layout/header.php';
 }
 
-function getMenu() {
+function getMenu()
+{
     require_once 'layout/menu.php';
 }
 
-function getFooter() {
+function getFooter()
+{
     require_once 'layout/footer.php';
 }
 
-function isActive(string $url, bool $endWith = false): bool {
+function isActive(string $url, bool $endWith = false): bool
+{
     if (
         (!$endWith && strpos($_SERVER['REQUEST_URI'], $url))
         || ($endWith && endsWith($_SERVER['REQUEST_URI'], $url))
@@ -36,7 +53,8 @@ function isActive(string $url, bool $endWith = false): bool {
     return false;
 }
 
-function endsWith(string $str, string $search): bool {
+function endsWith(string $str, string $search): bool
+{
     $length = strlen($search);
     return substr($str, -$length) === $search;
 }
