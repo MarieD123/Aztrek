@@ -16,7 +16,8 @@ function updatePays(int $id, string $libelle, string $image){
     global $connection;
 
     $query = "
-UPDATE pays SET libelle = :libelle, image = :image WHERE id = :id";
+UPDATE pays SET libelle = :libelle, image = :image 
+WHERE id = :id";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":libelle", $libelle);

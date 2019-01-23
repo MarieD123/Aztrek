@@ -21,14 +21,14 @@
                     Pays
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="nav-item <?php echo isActive("/crud/depart/") ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?php echo SITE_ADMIN; ?>crud/depart/">
                     <i class="fa fa-calendar"></i>
                     Départs
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="nav-item <?php echo isActive("/crud/etape/") ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?php echo SITE_ADMIN; ?>crud/etape/">
                     <i class="fa fa-road"></i>
                     Etapes
                 </a>

@@ -8,7 +8,6 @@ $sejour = getOneSejour($id);
 
 $etapes = getAllEtapesBySejour($id);
 $departs = getAllDepartsBySejour($id);
-$place = getParticipantsByDepart($id);
 
 
 getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
@@ -17,7 +16,7 @@ getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
 ?>
 
     <body class="page-sejour">
-<header class="header-top">
+<header class="header-top" id="top">
     <?php getMenu(); ?>
 </header>
 
@@ -102,27 +101,37 @@ getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
                     <TH>Du</TH>
                     <TH>Au</TH>
                     <TH>Prix</TH>
-                    <TH>Départ assuré à partir de</TH>
+                    <TH>Disponibilité</TH>
                     <th>Réservation</th>
                 </TR>
 
                 <?php foreach ($departs as $depart) : ?>
-                <TR>
-                    <Td> <?= $depart["date_depart_format"]; ?></Td>
-                    <TD> <?= $depart["date_retour_format"]; ?></TD>
-                    <TD> <?= $depart["prix"]; ?>€</TD>
-                    <?php if(getParticipantsByDepart( $depart["id"])["places_dispo"] == 0 ): ?>
-                        <td>Complet</td>
-                    <?php elseif(getParticipantsByDepart( $depart["id"])["places_dispo"] >= 4 ) : ?>
-                        <td>Départ assuré (<?= getParticipantsByDepart( $depart["id"])["places_dispo"]; ?>)</td>
-                    <?php elseif(getParticipantsByDepart( $depart["id"])["places_dispo"] == 3 ) : ?>
-                        <td>Départ assuré au prochain inscrit</td>
-                    <?php else : ?>
-                        <td>Départ assuré dès 4 inscrits</td>
-                    <?php endif; ?>
-                    <td><a href="" class="btn-cta btn-green">S'inscrire</a></td>
+                    <TR>
+                        <Td> <?= $depart["date_depart_format"]; ?></Td>
+                        <TD> <?= $depart["date_retour_format"]; ?></TD>
+                        <TD> <?= $depart["prix"]; ?>€</TD>
 
-                </TR>
+                        <?php if ($depart["places_dispo"] == 0): ?>
+                            <td>Complet</td>
+                            <?php elseif($depart["places_dispo"] == 1 ) : ?>
+                            <TD> Une place restante</TD>
+                        <?php else : ?>
+                            <TD> <?= $depart["places_dispo"]; ?> places restantes</TD>
+                        <?php endif; ?>
+
+                        <!--                    --><?php //if($depart["places_dispo"] == 0 ): ?>
+                        <!--                        <td>Complet</td>-->
+                        <!--                    --><?php //elseif($depart["nb_participants"] >= 4 ) : ?>
+                        <!--                        <td>Départ assuré</td>-->
+                        <!--                    --><?php //elseif($depart["nb_participants"] == 3 ) : ?>
+                        <!--                        <td>Départ assuré au prochain inscrit</td>-->
+                        <!--                    --><?php //else : ?>
+                        <!--                        <td>Départ assuré dès 4 inscrits</td>-->
+                        <!--                    --><?php //endif; ?>
+
+                        <td><a href="" class="btn-cta btn-green">S'inscrire</a></td>
+
+                    </TR>
                 <?php endforeach; ?>
 
             </TABLE>

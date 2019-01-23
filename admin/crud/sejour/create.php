@@ -48,11 +48,11 @@ require_once '../../layout/header.php';
         </div>
         <div class="form-group">
             <label>Description courte</label>
-            <textarea name="description_courte" class="form-control" required placeholder="Résumé du séjour"></textarea>
+            <textarea name="description_courte" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <label>Points forts</label>
-            <textarea name="pts_forts" class="form-control" placeholder="Notez les points forts du voyage, séparés par une virgule" required></textarea>
+            <textarea name="pts_forts" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <label>Itinéraire</label>

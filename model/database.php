@@ -13,7 +13,7 @@ try {
     die;
 }
 
-// Chargement des fonctions dans le dossier "entities"
+// Chargement des fonctions dans le dossier "tables"
 $files = glob(__DIR__ . "/tables/*.php");
 foreach ($files as $filepath) {
     require_once $filepath;
