@@ -49,7 +49,7 @@ function getOnePays(int $id): array
 {
     global $connection;
 
-    $query = "SELECT pays.libelle FROM pays WHERE id = :id ";
+    $query = "SELECT pays.libelle, pays.image FROM pays WHERE id = :id ";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":id", $id);
