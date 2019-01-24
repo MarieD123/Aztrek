@@ -23,31 +23,31 @@ getHeader("Accueil", "Atrek, agence de voyages en Amérique centrale")
 
             <div class="destinations">
                 <div class="photos-block photos-block-1">
-                    <a href="#" class="photo-destination" id="photo-1" style="background-image: url('uploads/<?= getOneEntity("pays", 1)["image"]; ?>'); background-position: top; background-size: auto 120%;">
+                    <a href="http://localhost:8888/aztrek/liste-sejours.php?id=1" class="photo-destination" id="photo-1" style="background-image: url('uploads/<?= getOneEntity("pays", 1)["image"]; ?>'); background-position: top; background-size: auto 120%;">
                         <div class="destination-color">
                             <h3><?= getOneEntity("pays", 1)["libelle"]; ?></h3>
                         </div>
                     </a>
-                    <a href="#" class="photo-destination" id="photo-2" style="background-image: url('uploads/<?= getOneEntity("pays", 2)["image"]; ?>');background-position: top right; background-size: auto 120%;">
+                    <a href="http://localhost:8888/aztrek/liste-sejours.php?id=2" class="photo-destination" id="photo-2" style="background-image: url('uploads/<?= getOneEntity("pays", 2)["image"]; ?>');background-position: top right; background-size: auto 120%;">
                         <div class="destination-color">
                             <h3><?= getOneEntity("pays", 2)["libelle"]; ?></h3>
                         </div>
                     </a>
                 </div>
                 <div class="photos-block photos-block-2">
-                    <a href="#" class="photo-destination" id="photo-3" style="background-image: url('uploads/<?= getOneEntity("pays", 3)["image"]; ?>');background-position: top; background-size: auto 120%;">
+                    <a href="http://localhost:8888/aztrek/liste-sejours.php?id=3" class="photo-destination" id="photo-3" style="background-image: url('uploads/<?= getOneEntity("pays", 3)["image"]; ?>');background-position: top; background-size: auto 120%;">
                         <div class="destination-color">
                             <h3><?= getOneEntity("pays", 3)["libelle"]; ?></h3>
                         </div>
                     </a>
-                    <a href="#" class="photo-destination" id="photo-4" style="background-image: url('uploads/<?= getOneEntity("pays", 4)["image"]; ?>');background-position: top; background-size: auto 120%;">
+                    <a href="http://localhost:8888/aztrek/liste-sejours.php?id=4" class="photo-destination" id="photo-4" style="background-image: url('uploads/<?= getOneEntity("pays", 4)["image"]; ?>');background-position: top; background-size: auto 120%;">
                         <div class="destination-color">
                             <h3><?= getOneEntity("pays", 4)["libelle"]; ?></h3>
                         </div>
                     </a>
                 </div>
                 <div class="photos-block photos-block-3">
-                    <a href="#" class="photo-destination" id="photo-5" style="background-image: url('uploads/<?= getOneEntity("pays", 5)["image"]; ?>'); background-position: top ; background-size: auto 120%;">
+                    <a href="http://localhost:8888/aztrek/liste-sejours.php?id=5" class="photo-destination" id="photo-5" style="background-image: url('uploads/<?= getOneEntity("pays", 5)["image"]; ?>'); background-position: top ; background-size: auto 120%;">
                         <div class="destination-color">
                             <h3><?= getOneEntity("pays", 5)["libelle"]; ?></h3>
                         </div>

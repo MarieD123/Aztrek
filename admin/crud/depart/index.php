@@ -51,12 +51,12 @@ require_once '../../layout/header.php';
                 <td><?php echo $date['prix']; ?></td>
                 <td><?php echo $date['titre_sejour']; ?></td>
                 <td class="actions">
-                    <a href="update.php?id=<?php echo $date['id']; ?>" class="btn btn-warning">
+                    <a href="update.php?id=<?php echo $date['dep_id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>
                         Modifier
                     </a>
                     <form action="delete_query.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $date['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $date['dep_id']; ?>">
                         <button type="submit" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                             Supprimer

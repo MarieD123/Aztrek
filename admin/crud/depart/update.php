@@ -13,7 +13,7 @@ require_once '../../layout/header.php';
     <form action="update_query.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label>Date de départ</label>
-            <input type="date" name="date_depart" value="<?php echo $depart["titre"]; ?>" class="form-control" placeholder="Titre" required>
+            <input type="date" name="date_depart" value="<?php echo $depart["date_depart"]; ?>" class="form-control" required>
         </div>
         <div class="form-group">
             <label>prix</label>
@@ -30,6 +30,7 @@ require_once '../../layout/header.php';
                 <?php endforeach; ?>
             </select>
         </div>
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
         <button type="submit" class="btn btn-success">
             <i class="fa fa-check"></i>
             Ajouter

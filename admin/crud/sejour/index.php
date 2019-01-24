@@ -52,7 +52,7 @@ require_once '../../layout/header.php';
         <?php foreach ($sejours as $sejour) : ?>
             <tr>
                 <td><?php echo $sejour['titre']; ?></td>
-                <td><?php echo $sejour['pays']; ?></td>
+                <td><?php echo $sejour['libelle']; ?></td>
                 <td><?php echo $sejour['difficulte']; ?></td>
                 <td>
                     <img src="../../../uploads/<?php echo $sejour['image']; ?>" class="img-thumbnail">

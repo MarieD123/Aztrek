@@ -13,11 +13,12 @@
 .header-top {
     display: flex;
     flex-direction: column;
-
-    background-color: $beige;
-    background: url(../images/bg-header-photo.png) bottom right no-repeat;
+    background-color: #F7EEEA;
+    background-image: url(../images/bg-header-photo.png);
     background-size: cover;
     min-height: 500px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
 
 
     @media (min-width: $bp-large) {

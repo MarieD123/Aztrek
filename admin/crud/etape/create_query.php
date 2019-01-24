@@ -2,7 +2,10 @@
 require_once '../../security.php';
 require_once '../../../model/database.php';
 
-$libelle = $_POST['libelle'];
+$sejour_id = $_POST['sejour_id'];
+$num = $_POST['num'];
+$titre = $_POST['titre'];
+$description = $_POST['description'];
 
 // Upload de l'image
 $filename = $_FILES["image"]["name"];
@@ -11,6 +14,6 @@ move_uploaded_file($tmp, "../../../uploads/" . $filename);
 
 
 
-insertPays($libelle, $filename);
+insertEtape($sejour_id, $num, $titre, $description, $filename);
 
 header('Location: index.php');

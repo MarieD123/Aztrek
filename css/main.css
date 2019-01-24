@@ -547,9 +547,11 @@ h4 {
   display: flex;
   flex-direction: column;
   background-color: #F7EEEA;
-  background: url(../images/bg-header-photo.png) bottom right no-repeat;
+  background-image: url(../images/bg-header-photo.png);
   background-size: cover;
-  min-height: 500px; }
+  min-height: 500px;
+  background-position: bottom right;
+  background-repeat: no-repeat; }
   @media (min-width: 992px) {
     .header-top {
       min-height: 500px; } }

@@ -8,7 +8,7 @@ function getAllDeparts(int $limit = 999): array {
     SELECT 
       depart.*,
       DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,     
-      sejour.id, 
+      sejour.id, depart.id as dep_id,
       sejour.titre AS titre_sejour,
       uhd.*
     FROM depart
@@ -18,6 +18,33 @@ function getAllDeparts(int $limit = 999): array {
     ";
 
     $stmt = $connection->prepare($query);
+    $stmt -> execute();
+
+    return $stmt->fetchAll();
+}
+
+
+
+function getAllDepartsBySejour(int $id): array {
+    global $connection;
+
+    $query = "
+    SELECT 
+        depart.*,
+          DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart_format,
+        sejour.*,
+           DATE_FORMAT(ADDDATE(depart.date_depart, sejour.duree), '%d-%m-%Y') AS date_retour_format,
+           sejour.nb_places - SUM(uhd.nb_participants) AS places_dispo
+    FROM depart
+    LEFT JOIN sejour on depart.sejour_id = sejour.id
+    INNER JOIN utilisateur_has_depart uhd on depart.id = uhd.depart_id
+    WHERE sejour_id = :id
+    GROUP BY depart.id
+    
+    ";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
     $stmt -> execute();
 
     return $stmt->fetchAll();
