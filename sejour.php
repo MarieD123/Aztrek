@@ -5,13 +5,12 @@ require_once "functions.php";
 
 $id = $_GET["id"];
 $sejour = getOneSejour($id);
+$user = $user = getCurrentUser();
 
 $etapes = getAllEtapesBySejour($id);
 $departs = getAllDepartsBySejour($id);
 
-
 getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
-
 
 ?>
 
@@ -113,23 +112,30 @@ getHeader($sejour["titre"], "Atrek, agence de voyages en Amérique centrale");
 
                         <?php if ($depart["places_dispo"] == 0): ?>
                             <td>Complet</td>
-                            <?php elseif($depart["places_dispo"] == 1 ) : ?>
+                        <?php elseif ($depart["places_dispo"] == 1) : ?>
                             <TD> Une place restante</TD>
                         <?php else : ?>
                             <TD> <?= $depart["places_dispo"]; ?> places restantes</TD>
                         <?php endif; ?>
 
-                        <!--                    --><?php //if($depart["places_dispo"] == 0 ): ?>
-                        <!--                        <td>Complet</td>-->
-                        <!--                    --><?php //elseif($depart["nb_participants"] >= 4 ) : ?>
-                        <!--                        <td>Départ assuré</td>-->
-                        <!--                    --><?php //elseif($depart["nb_participants"] == 3 ) : ?>
-                        <!--                        <td>Départ assuré au prochain inscrit</td>-->
-                        <!--                    --><?php //else : ?>
-                        <!--                        <td>Départ assuré dès 4 inscrits</td>-->
-                        <!--                    --><?php //endif; ?>
 
-                        <td><a href="" class="btn-cta btn-green">S'inscrire</a></td>
+                        <td>
+                            <?php if (isset($user)) : ?>
+                                <form action="create_resa_query.php" method="post">
+                                <div class="form-group">
+                                    <label>Nombre de personnes</label>
+                                    <input type="number" name="resas" class="form-control" required>
+                                </div>
+                                    <input type="hidden" name="depart_id" value="<?php echo $depart["id"]; ?>">
+                                    <button type="submit" class="btn btn-success mb-5 btn-cta">
+                                        <i class="fa fa-check"></i>
+                                        Réserver
+                                    </button>
+                                </form>
+                            <?php else: ?>
+                                <a href="<?= SITE_ADMIN; ?>login.php" class="btn-cta btn-green">Connexion</a>
+                            <?php endif; ?>
+                        </td>
 
                     </TR>
                 <?php endforeach; ?>

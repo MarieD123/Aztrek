@@ -100,4 +100,17 @@ function updateDepart(int $id, string $date_depart, $prix, $sejour_id){
     $stmt->execute();
 }
 
+function insertParticipant(int $utilisateur_id, int $depart_id, int $nb_participants) {
+    global $connection;
+
+    $query = "
+INSERT INTO utilisateur_has_depart(utilisateur_id, depart_id, nb_participants) VALUES (:utilisateur_id, :depart_id, :nb_participants)";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":depart_id", $depart_id);
+    $stmt->bindParam(":nb_participants", $nb_participants);
+    $stmt->bindParam(":utilisateur_id", $utilisateur_id);
+    $stmt->execute();
+}
+
 

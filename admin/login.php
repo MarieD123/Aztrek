@@ -32,6 +32,8 @@
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 
+            <p class="mt-5">Pas encore membre ? <a href="../create_account.php">S'inscrire</a></p>
+
             <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         </form>
     </body>
