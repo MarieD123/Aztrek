@@ -7,10 +7,10 @@ require_once '../../layout/header.php'; ?>
 
 <h1>Ajout d'un départ</h1>
 
-<form action="create_query.php" method="POST" enctype="multipart/form-data">
+<form action="create_query.php" method="POST">
     <div class="form-group">
         <label>Date de départ</label>
-        <input type="date" name="date_depart" class="form-control" placeholder="Titre" required>
+        <input type="date" name="date_depart" class="form-control" required>
     </div>
     <div class="form-group">
         <label>prix</label>

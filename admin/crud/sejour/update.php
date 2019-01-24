@@ -28,7 +28,7 @@ require_once '../../layout/header.php';
         </div>
         <div class="form-group">
             <label>Image</label>
-            <input type="file" name="image" class="form-control" required>
+            <input type="file" name="image" class="form-control">
             <?php if ($sejour["image"]) : ?>
                 <img src="../../../uploads/<?php echo $sejour["image"]; ?>" class="img-thumbnail">
             <?php endif; ?>
@@ -54,7 +54,7 @@ require_once '../../layout/header.php';
         </div>
         <div class="form-group">
             <label>Description courte</label>
-            <textarea name="description_courte"  value="<?= $sejour["description_courte"]; ?>" class="form-control"></textarea>
+            <textarea name="description_courte"  value="" class="form-control"><?= $sejour["description_courte"]; ?></textarea>
         </div>
         <div class="form-group">
             <label>Points forts</label>
@@ -62,7 +62,7 @@ require_once '../../layout/header.php';
         </div>
         <div class="form-group">
             <label>Itinéraire</label>
-            <input type="file" name="itineraire" class="form-control"  required>
+            <input type="file" name="itineraire" class="form-control">
             <?php if ($sejour["itineraire"]) : ?>
                 <img src="../../../uploads/<?php echo $sejour["itineraire"]; ?>" class="img-thumbnail">
             <?php endif; ?>

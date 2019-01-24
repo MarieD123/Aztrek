@@ -13,7 +13,7 @@ function getAllDeparts(int $limit = 999): array {
       uhd.*
     FROM depart
     INNER JOIN sejour on depart.sejour_id = sejour.id
-    INNER JOIN utilisateur_has_depart uhd on depart.id = uhd.depart_id
+    LEFT JOIN utilisateur_has_depart uhd on depart.id = uhd.depart_id
     LIMIT $limit
     ";
 
@@ -74,7 +74,7 @@ function getAllInscritsByDepart(int $id): array {
 
 
 
-function insertDepart(string $date_depart, $prix, $sejour_id) {
+function insertDepart(string $date_depart, float $prix, int $sejour_id) {
     global $connection;
 
     $query = "
